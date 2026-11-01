@@ -1,0 +1,386 @@
+{
+  "status": "PASS",
+  "pages": 47,
+  "indexable": 36,
+  "noindex": 11,
+  "linksChecked": 2397,
+  "errors": [],
+  "warnings": [],
+  "largestFiles": [
+    {
+      "file": "assets/hd-monogram.glb",
+      "bytes": 3185252
+    },
+    {
+      "file": "assets/hd-monogram-surface-v2.bin.gz",
+      "bytes": 2033161
+    },
+    {
+      "file": "vendor/three/build/three.module.js",
+      "bytes": 1280747
+    },
+    {
+      "file": "assets/materials/gold-normal.png",
+      "bytes": 1192698
+    },
+    {
+      "file": "assets/materials/obsidian-normal.png",
+      "bytes": 1192698
+    },
+    {
+      "file": "assets/hd-monogram-surface-v2-mobile.bin.gz",
+      "bytes": 1036147
+    },
+    {
+      "file": "assets/hero-sculpture.webp",
+      "bytes": 662940
+    },
+    {
+      "file": "assets/concepts/durukan.webp",
+      "bytes": 513138
+    },
+    {
+      "file": "assets/materials/obsidian-roughness.png",
+      "bytes": 406278
+    },
+    {
+      "file": "assets/architecture.webp",
+      "bytes": 399958
+    }
+  ],
+  "details": [
+    {
+      "file": "404.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/404.html",
+      "noindex": true,
+      "title": "Sayfa bulunamadı | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "deneyim/otomasyon/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/deneyim/otomasyon/",
+      "noindex": false,
+      "title": "İşletmeni Dönüştür | Otomasyon Deneyimi | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "hizmetler/e-ticaret-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/hizmetler/e-ticaret-web-sitesi/",
+      "noindex": false,
+      "title": "E-Ticaret Web Sitesi Planlama ve Tasarım | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "hizmetler/isletme-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/hizmetler/isletme-web-sitesi/",
+      "noindex": false,
+      "title": "İşletme Web Sitesi Tasarımı | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "hizmetler/kurumsal-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/hizmetler/kurumsal-web-sitesi/",
+      "noindex": false,
+      "title": "Kurumsal Web Sitesi Tasarımı | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "hizmetler/ozel-web-yazilimi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/hizmetler/ozel-web-yazilimi/",
+      "noindex": false,
+      "title": "İşletmeye Özel Web Yazılımı | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "hizmetler/size-ozel-web-tasarim/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/hizmetler/size-ozel-web-tasarim/",
+      "noindex": false,
+      "title": "Size Özel Web Tasarım | Vizyonunuzdan Web Sitenize | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "hizmetler/web-sitesi-yenileme/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/hizmetler/web-sitesi-yenileme/",
+      "noindex": false,
+      "title": "Web Sitesi Yenileme ve Yeniden Tasarım | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/",
+      "noindex": false,
+      "title": "Eskişehir Web Tasarım ve Yazılım Şirketi | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "ornekler/dis-klinigi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/ornekler/dis-klinigi/",
+      "noindex": true,
+      "title": "Liva Diş — Diş kliniği Tasarım Örneği | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "ornekler/doktor/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/ornekler/doktor/",
+      "noindex": true,
+      "title": "Dr. Ada Deniz — Hekim sitesi Tasarım Örneği | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "ornekler/durukan-emlak/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/ornekler/durukan-emlak/",
+      "noindex": true,
+      "title": "Durukan Emlak — Gayrimenkul Tasarım Örneği | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "ornekler/durukan-insaat/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/ornekler/durukan-insaat/",
+      "noindex": true,
+      "title": "Durukan İnşaat — İnşaat Tasarım Örneği | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "ornekler/ertorun-insaat/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/ornekler/ertorun-insaat/",
+      "noindex": true,
+      "title": "Ertorun İnşaat — İnşaat Tasarım Örneği | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "ornekler/muzisyen/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/ornekler/muzisyen/",
+      "noindex": true,
+      "title": "Deniz Akın — Müzisyen Tasarım Örneği | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "ornekler/petshop/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/ornekler/petshop/",
+      "noindex": true,
+      "title": "Pati Kulübü — Petshop Tasarım Örneği | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "ornekler/top-cleaning/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/ornekler/top-cleaning/",
+      "noindex": true,
+      "title": "Top Cleaning — Temizlik hizmetleri Tasarım Örneği | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "ornekler/veteriner/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/ornekler/veteriner/",
+      "noindex": true,
+      "title": "Mori Veteriner — Veteriner kliniği Tasarım Örneği | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "rehber/cok-dilli-web-sitesi-planlama/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/cok-dilli-web-sitesi-planlama/",
+      "noindex": false,
+      "title": "Çok Dilli Web Sitesi Nasıl Planlanır? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/eskisehir-butik-otel-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/eskisehir-butik-otel-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir Butik Otel Web Sitesi Rehberi | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/eskisehir-dugun-salonu-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/eskisehir-dugun-salonu-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir düğün salonu web sitesi: çiftlerin kararını kolaylaştıran içerikler | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/eskisehir-guzellik-salonu-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/eskisehir-guzellik-salonu-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir Güzellik Salonu Web Sitesi | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/eskisehir-oto-servis-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/eskisehir-oto-servis-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir Oto Servis Web Sitesi Rehberi | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/eskisehir-restoran-kafe-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/eskisehir-restoran-kafe-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir Restoran ve Kafe Web Sitesi | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/hizmet-isletmeleri-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/hizmet-isletmeleri-web-sitesi/",
+      "noindex": false,
+      "title": "Hizmet İşletmeleri İçin Web Sitesi Nasıl Olmalı? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/",
+      "noindex": false,
+      "title": "Web Tasarım Rehberi: İşletmeler İçin Pratik Notlar | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "rehber/otomasyon-excelden-is-takibine-gecis/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/otomasyon-excelden-is-takibine-gecis/",
+      "noindex": false,
+      "title": "Excel’den iş takip sistemine ne zaman geçmelisiniz? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/otomasyon-maliyet-ve-ilk-surum/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/otomasyon-maliyet-ve-ilk-surum/",
+      "noindex": false,
+      "title": "Otomasyon yazılımının maliyeti nasıl belirlenir? İlk sürümü doğru seçin. | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/otomasyon-musteri-talep-takibi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/otomasyon-musteri-talep-takibi/",
+      "noindex": false,
+      "title": "Müşteri Talep Takibi ve Otomasyon | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/otomasyon-nedir/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/otomasyon-nedir/",
+      "noindex": false,
+      "title": "Otomasyon nedir? Küçük işletmeler için iş akışını sadeleştirme rehberi | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/otomasyon-siparis-stok-entegrasyonu/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/otomasyon-siparis-stok-entegrasyonu/",
+      "noindex": false,
+      "title": "Sipariş ve stok entegrasyonu: önce hangi bağlantıyı kurmalısınız? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/otomasyon-teknik-servis-is-emri/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/otomasyon-teknik-servis-is-emri/",
+      "noindex": false,
+      "title": "Teknik serviste iş emri takibi nasıl planlanır? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/web-sitesi-icerikleri-nasil-hazirlanir/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/web-sitesi-icerikleri-nasil-hazirlanir/",
+      "noindex": false,
+      "title": "Web Sitesi İçerikleri Nasıl Hazırlanır? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/web-sitesi-yaptirmadan-once/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/web-sitesi-yaptirmadan-once/",
+      "noindex": false,
+      "title": "Web Sitesi Yaptırmadan Önce Neler Hazırlanmalı? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "rehber/web-sitesi-yenileme-ne-zaman-gerekir/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/rehber/web-sitesi-yenileme-ne-zaman-gerekir/",
+      "noindex": false,
+      "title": "Web Sitesi Yenileme Ne Zaman Gerekir? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "seo/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/seo/",
+      "noindex": false,
+      "title": "SEO ve Yapay Zekâda Görünürlük Rehberleri | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "seo/seo-on-analizi-kontrol-listesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/seo/seo-on-analizi-kontrol-listesi/",
+      "noindex": false,
+      "title": "SEO Ön Analizi Kontrol Listesi: Sitenizde Neye Bakmalısınız? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "seo/yapay-zekada-onerilen-site/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/seo/yapay-zekada-onerilen-site/",
+      "noindex": false,
+      "title": "Yapay Zekâda Önerilen Site Nasıl Olunur? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "turkiye-avrupa-web-tasarim/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/turkiye-avrupa-web-tasarim/",
+      "noindex": false,
+      "title": "Türkiye ve Avrupa İçin Web Tasarım | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "yasal/cerezler/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/yasal/cerezler/",
+      "noindex": false,
+      "title": "Çerezler ve tarayıcı verileri | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "yasal/gizlilik/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/yasal/gizlilik/",
+      "noindex": false,
+      "title": "Gizlilik ve veri kullanımı | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "yasal/kvkk/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/yasal/kvkk/",
+      "noindex": true,
+      "title": "İletişim talepleri ve KVKK | HD Medya",
+      "schemas": 1
+    },
+    {
+      "file": "yerel-rehber/eskisehir-cnc-teknik-servis-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/yerel-rehber/eskisehir-cnc-teknik-servis-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir’de CNC teknik servis sitesi: arıza talebi nasıl toplanır? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "yerel-rehber/eskisehir-emlak-ofisi-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/yerel-rehber/eskisehir-emlak-ofisi-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir emlak ofisi web sitesi: ilandan görüşme talebine | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "yerel-rehber/eskisehir-kurumsal-temizlik-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/yerel-rehber/eskisehir-kurumsal-temizlik-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir temizlik firması web sitesi: doğru teklif bilgisi nasıl alınır? | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "yerel-rehber/eskisehir-mimarlik-ic-mimarlik-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/yerel-rehber/eskisehir-mimarlik-ic-mimarlik-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir mimarlık ve iç mimarlık sitesi: projeyi anlatan portföy | HD Medya",
+      "schemas": 2
+    },
+    {
+      "file": "yerel-rehber/eskisehir-oto-detailing-web-sitesi/index.html",
+      "canonical": "https://hdmedyaeskisehir.com.tr/yerel-rehber/eskisehir-oto-detailing-web-sitesi/",
+      "noindex": false,
+      "title": "Eskişehir oto detailing sitesi: paket seçimi ve randevu talebi | HD Medya",
+      "schemas": 2
+    }
+  ],
+  "limits": [
+    "Local generated files only; no live DNS/TLS/redirect/header, Search Console, ranking or field Core Web Vitals validation.",
+    "External links are separate read-only availability checks; login/bot restrictions do not prove broken sites."
+  ]
+}

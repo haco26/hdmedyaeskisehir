@@ -1,0 +1,113 @@
+[
+  {
+    "width": 320,
+    "route": "/",
+    "headerOverflow": []
+  },
+  {
+    "width": 320,
+    "route": "/rehber/",
+    "headerOverflow": []
+  },
+  {
+    "width": 320,
+    "route": "/deneyim/otomasyon/",
+    "headerOverflow": []
+  },
+  {
+    "width": 320,
+    "route": "/seo/",
+    "headerOverflow": []
+  },
+  {
+    "width": 320,
+    "route": "/yasal/kvkk/",
+    "headerOverflow": []
+  },
+  {
+    "width": 360,
+    "route": "/",
+    "headerOverflow": []
+  },
+  {
+    "width": 360,
+    "route": "/rehber/",
+    "headerOverflow": []
+  },
+  {
+    "width": 360,
+    "route": "/deneyim/otomasyon/",
+    "headerOverflow": []
+  },
+  {
+    "width": 360,
+    "route": "/seo/",
+    "headerOverflow": []
+  },
+  {
+    "width": 360,
+    "route": "/yasal/kvkk/",
+    "headerOverflow": []
+  },
+  {
+    "width": 768,
+    "route": "/",
+    "headerOverflow": []
+  },
+  {
+    "width": 768,
+    "route": "/rehber/",
+    "headerOverflow": []
+  },
+  {
+    "width": 768,
+    "route": "/deneyim/otomasyon/",
+    "headerOverflow": []
+  },
+  {
+    "width": 768,
+    "route": "/seo/",
+    "headerOverflow": []
+  },
+  {
+    "width": 768,
+    "route": "/yasal/kvkk/",
+    "headerOverflow": []
+  },
+  {
+    "test": "contact-unacknowledged",
+    "outgoing": [
+      "https://wa.me/905368835867?text=Merhaba%20HD%20Medya%2C%20web%20sitesi%20veya%20yaz%C4%B1l%C4%B1m%20projem%20i%C3%A7in%20bilgi%20almak%20istiyorum.%0AAd%20%2F%20%C4%B0%C5%9Fletme%3A%20%C3%96rnek%20%C4%B0%C5%9Fletme%0AProje%20t%C3%BCr%C3%BC%3A%20Birlikte%20belirleyelim%0AProje%3A%20Web%20sitem%20i%C3%A7in%20teklif%20istiyorum."
+    ],
+    "ack": false
+  },
+  {
+    "test": "seo-invalid",
+    "outgoing": [],
+    "validation": "Geçerli bir site adresi yazın. Örnek: isletmeniz.com"
+  },
+  {
+    "test": "seo-corrected-prefixless",
+    "outgoing": [
+      "https://wa.me/905368835867?text=Merhaba%20HD%20Medya%2C%20web%20sitem%20i%C3%A7in%20%C3%BCcretsiz%20SEO%20%C3%B6n%20analizi%20istiyorum.%0ASite%20adresi%3A%20https%3A%2F%2Fexample.com%2F"
+    ],
+    "notice": [
+      "",
+      ""
+    ]
+  },
+  {
+    "test": "auto-empty",
+    "outgoing": [],
+    "error": "Lütfen en az bir ihtiyacınızı seçin."
+  },
+  {
+    "test": "auto-corrected-selection",
+    "outgoing": [
+      "https://wa.me/905368835867?text=Merhaba+HD+Medya.+Otomasyon+projemi+g%C3%B6r%C3%BC%C5%9Fmek+istiyorum.%0ASekt%C3%B6r%3A+Teknik+servis%0A%C4%B0htiya%C3%A7lar%3A+Merkezi+kay%C4%B1t%0AAd+%2F+i%C5%9Fletme%3A+Belirtilmedi%0A%C4%B0%C5%9F+ak%C4%B1%C5%9F%C4%B1m%3A+Birlikte+de%C4%9Ferlendirelim."
+    ],
+    "notice": [
+      ""
+    ]
+  }
+]

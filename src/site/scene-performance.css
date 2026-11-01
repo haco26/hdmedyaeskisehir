@@ -1,0 +1,17 @@
+/* Final artwork is always visible; readiness is a quiet studio instrument. */
+#heroStage[data-scene='scheduled'] .hero-art img,#heroStage[data-scene='deferred'] .hero-art img{filter:none!important;opacity:1!important}
+#heroStage[data-load-phase] .hero-art img{filter:none!important;opacity:1!important}
+#heroStage[data-load-phase]:not([data-load-phase='complete']):not([data-load-phase='fallback']) .hero-art::after{opacity:.5;animation-duration:2.7s;background:linear-gradient(110deg,transparent 39%,#d1ff4640 46%,#ffffffc0 50%,transparent 60%);background-size:280% 100%}
+#heroStage[data-scene='deferred'] .hero-art::after,#heroStage[data-scene='scheduled'] .hero-art::after{display:none!important}
+.hero-load-status{bottom:70px;padding:10px 15px 13px!important;border-radius:4px 18px 18px 18px!important;box-shadow:0 8px 30px #2031290a;font-size:12px!important;letter-spacing:.015em!important;overflow:hidden}
+.hero-load-status::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:18%;background:linear-gradient(90deg,#ff5a36,#d1ff46);transition:width .35s ease}
+#heroStage[data-load-detail='material'] .hero-load-status::after{width:42%}
+#heroStage[data-load-detail='geometry'] .hero-load-status::after{width:68%}
+#heroStage[data-load-detail='lighting'] .hero-load-status::after{width:88%}
+#heroStage[data-scene='deferred'] .hero-load-status,#heroStage[data-scene='scheduled'] .hero-load-status{opacity:0;visibility:hidden}
+.scene-activate{position:absolute;z-index:21;bottom:70px;left:50%;transform:translateX(-50%);border:1px solid #b5cf72;border-radius:8px 18px 18px 18px;background:#d1ff46;color:#20352b;min-height:44px;padding:12px 18px;font:600 14px/1.2 inherit;cursor:pointer;box-shadow:0 5px 0 #20352b12;white-space:nowrap}
+.scene-activate[hidden]{display:none}
+.scene-activate:focus-visible{outline:3px solid #ff5a36;outline-offset:4px}
+.scene-activate:hover{background:#e2ff91;translate:0 -2px}
+@media(prefers-reduced-motion:reduce){.hero-load-status::after,.scene-activate{transition:none}.scene-activate:hover{translate:none}}
+@media(max-width:560px){.hero-load-status,.scene-activate{bottom:62px;max-width:calc(100% - 24px);font-size:12px!important}}

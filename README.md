@@ -45,10 +45,14 @@ npm run preview
 
 ## 4. Sistem mimarisi — ne nereden değişir?
 
+**1 Kasım revizyonu:** Menü, footer, ortak form alanları, buton/başlık kataloğu, kaydırma çubuğu ve yükleme metinleri `mimari.js` dosyasından yönetilir. İşletme/fiyat bilgileri yine `bilgiler.js` içindedir. Adım adım yönetim haritası: [MIMARI-YONETIM.md](docs/MIMARI-YONETIM.md). Araştırma ve kararlar: [STRATEJI-ARASTIRMA.md](docs/STRATEJI-ARASTIRMA.md).
+
 | Dosya / klasör | Görevi |
 |---|---|
 | `bilgiler.js` | Şirket adı, telefon, adresler, sosyal hesaplar, referanslar, fiyatlar, hizmetler, SSS ve yasal bileşen sürümünün tek veri kaynağı |
-| `src/site/index.html` | Ana sayfa yapısı; iletişim ve şirket dizini; kurumsal footer |
+| `mimari.js` | Ortak menü, footer, formlar, yükleme ve gezinme etiketleri, renkler, 738 statik arayüz metni |
+| `tools/experience-system.mjs` | Ortak header/footer/form üreticileri; her sayfaya build sırasında uygulanır |
+| `src/site/index.html` | Ana sayfa bölümleri; ortak kabuk ve metinler merkezi veriden gelir |
 | `src/site/` | Eski HTML hizmet/rehber sayfaları, etkileşimler, CSS ve görseller |
 | `content/makaleler/*.md` | Yeni makaleler: yalnız içerik ve üst bilgiler |
 | `templates/article.html` | Yeni makalelerin ortak başlık, footer ve sayfa kabuğu |
@@ -153,9 +157,9 @@ Başlık en fazla 240, açıklama 500, kategori 80, adres 120, alternatif metin 
 
 Formlar sizin adınıza otomatik WhatsApp mesajı göndermez. Bilgileri bir URL’ye kodlayıp mesaj taslağı açar; kullanıcı WhatsApp’ta gönderir. Bu projede form API’si, kayıt tabanı, SMTP, ücretli mesaj API’si veya API anahtarı yoktur. Sosyal medya paketleri hizmet teklifidir; sitedeki paket kartları hesaplarınıza otomatik paylaşım yapmaz. Simülasyon da gerçek fatura/sipariş yazılımı değildir.
 
-Ortak teyit kutusu başlangıçta boş ve required’dır. İşaretlenmeden form düğmesi açılmaz. Gizli tuzak alanı ve aynı form için sayfa açıkken 30 saniyelik tekrar kontrolü basit bot etkileşimini azaltmayı amaçlar. **Bunlar sunucu tarafı koruma, CAPTCHA, IP hız sınırı veya firewall değildir; aşılabilir.** Yenileme beklemeyi sıfırlar. WhatsApp/telefon numarası herkese açık olduğundan doğrudan spam tamamen engellenemez. Şüpheli hesapları WhatsApp üzerinden engelleyin/raporlayın. İleride gerçek kayıt/mesaj API’si eklenirse sunucuda doğrulama, oran sınırlaması ve kötüye kullanım kontrolleri yeniden tasarlanmalıdır; gizli API anahtarı tarayıcıya konmamalıdır.
+Ortak okuma teyidi başlangıçta boştur ve isteğe bağlıdır. Teklif istemek için işaretlenmesi gerekmez. Gizli tuzak alanı ve geçerli bir mesaj hazırlandıktan sonra aynı form için 30 saniyelik tekrar kontrolü basit bot etkileşimini azaltmayı amaçlar. **Bunlar sunucu tarafı koruma, CAPTCHA, IP hız sınırı veya firewall değildir; aşılabilir.** Yenileme beklemeyi sıfırlar. WhatsApp/telefon numarası herkese açık olduğundan doğrudan spam tamamen engellenemez. Şüpheli hesapları WhatsApp üzerinden engelleyin/raporlayın. İleride gerçek kayıt/mesaj API’si eklenirse sunucuda doğrulama, oran sınırlaması ve kötüye kullanım kontrolleri yeniden tasarlanmalıdır; gizli API anahtarı tarayıcıya konmamalıdır.
 
-Okuma teyidi ve metin sürümü WhatsApp taslağına eklenir. Statik site bağımsız bir onay günlüğü tutmaz; kullanıcı taslağı değiştirebilir. Bu kutu pazarlama izni veya hukuki güvence değildir. Sahte sicil/işletme numarası eklenmemiştir. `legal.controllerName` ve `legal.registrationNumber` ancak gerçek, doğrulanmış bilgiyle doldurulmalıdır. Kimlik, saklama, başvuru ve WhatsApp kaynaklı olası yurt dışı aktarım koşulları kesinleştirilmeden KVKK metni tamamlanmış sayılmaz; ilgili sayfa şimdilik noindex’tir. [KVKK yayın öncesi notları](docs/KVKK-YAYIN-ONCESI.md).
+İsteğe bağlı okuma teyidi işaretlenirse metin sürümü WhatsApp taslağına eklenir. Teklif talebi bu kutuya bağlı değildir. Statik site bağımsız bir onay günlüğü tutmaz. Aydınlatma, pazarlama izni ve yurt dışı aktarım rızası birbirinden farklıdır. Yasal sayfalar gerçek iletişim bilgileri ve veri akışına göre doldurulmuştur; sahte sicil numarası kullanılmaz. İşletmenin metin dışında uygulaması gereken gerçek yükümlülükleri [özel notta](docs/KVKK-YAYIN-ONCESI.md) açıklanır.
 
 ## 9. Güvenlik mimarisi ve sınırlar
 
@@ -163,7 +167,7 @@ Okuma teyidi ve metin sürümü WhatsApp taslağına eklenir. Statik site bağı
 - Kapak yolu/boyutu/oranı doğrulanır; SVG içindeki script, olay işleyicisi ve dış referans işaretleri kabul edilmez.
 - Build geçersiz girdi, çıktı çakışması, symlink veya hassas dosya adı durumunda durur. Bu doğrulamalar kaynaklara yazma yetkisi olan kişiyi güvenilmeyen kullanıcıya dönüştürmez; `bilgiler.js` çalıştırılan güvenilir kaynak koddur.
 - Üretilen HTML’de meta CSP vardır: yerel betikler ve tam içerik karmalı inline betikler; eval ve rastgele inline script izni yoktur. `object-src none`, `base-uri self`, `form-action none` kullanılır. Formlar JavaScript ile çalışır; native gönderim engellenir.
-- Dinamik görsel/stil ihtiyaçları sebebiyle inline stiller ve data/blob görselleri gereklidir. Google Fonts dış stil/font bağımlılığıdır; font erişimi olmazsa yedek font kullanılır. Bunlar açıkça belgelenmiştir.
+- Dinamik görsel/stil ihtiyaçları sebebiyle inline stiller ve data/blob görselleri gereklidir. Fontlar lisanslarıyla birlikte yerel sunulur; ilk açılışta Google Fonts isteği yapılmaz.
 - Meta CSP; HTTP yanıt başlıklarının, HSTS’nin, `frame-ancestors`/X-Frame-Options’ın veya hosting güvenliğinin tamamının yerini tutmaz. GitHub Pages özel sunucu kodu veya keyfi güvenlik başlığı yapılandırması sunan bir backend değildir. Bunlar gerekiyorsa uygun bir ön katman/hosting ayrıca değerlendirilir.
 - Monogram IndexedDB’de yalnız işlevsel geometri önbelleği tutabilir; kişisel profil/analiz verisi değildir. Tarayıcının site verileri temizlenince yeniden hesaplanır.
 - Three.js yerel r161 sürümüdür; yalnız yerel olması güncellik veya açık bulunmaması garantisi vermez. Kütüphane güncellemesi malzeme, ışık ve etkileşim testleriyle birlikte yapılmalıdır.
@@ -173,7 +177,7 @@ Okuma teyidi ve metin sürümü WhatsApp taslağına eklenir. Statik site bağı
 
 ## 10. SEO ve yayın sonrası kontrol
 
-Başlık/açıklama/H1, canonical, JSON-LD, görsel alt metni, yerel bağlantılar, noindex/sitemap tutarlılığı otomatik denetlenir. 404 sayfası ve KVKK taslağı indekslenmez; kurgu tasarım örnekleri de noindex’tir. Uzun başlıklar arama sonucunda kısalabilir; audit bunları uyarı olarak bildirir, içeriği sessizce kesmez.
+Başlık/açıklama/H1, canonical, JSON-LD, görsel alt metni, yerel bağlantılar, noindex/sitemap tutarlılığı otomatik denetlenir. 404, KVKK başvuru sayfası ve kurgu tasarım örnekleri noindex’tir. Uzun editoryal H1 korunur; arama sonucu başlığını `mimari.js` içindeki `pageTitles` alanından ayrıca yönetebilirsiniz.
 
 Yayın sonrasında sizin kontrol etmeniz gerekenler:
 
@@ -192,7 +196,7 @@ Yayın sonrasında sizin kontrol etmeniz gerekenler:
 | Sadece ana sayfada görünmüyor | Alan yalnız en güncel üç Markdown yazıyı gösterir; aynı tarihte slug sırası uygulanır. |
 | Görsel bozuk | Yol büyük/küçük harf dahil birebir aynı mı? Dosya GitHub’a yüklendi mi? 16:9, boyut ve alt metin uygun mu? |
 | CSS/görseller repository URL’sinde bozuk | Pages source GitHub Actions mı? Workflow base_path alıyor mu? `dist` dosyalarını elle taşımadınız mı? |
-| Form düğmesi kapalı | Teyit kutusunu işaretleyin; zorunlu alanları doldurun; tuzak alanı dolu olmamalı. |
+| Form ilerlemiyor | Gerekli alanları kontrol edin. Okuma teyidi isteğe bağlıdır. Yeni talepler arasında kısa bekleme ve botlara karşı gizli alan kontrolü vardır. |
 | WhatsApp açılmıyor | Tarayıcı açılır pencere engeli, tekrar beklemesi ve WhatsApp kullanılabilirliğini kontrol edin. Site sunucudan mesaj göndermez. |
 | 3D açılmıyor | WebGL/donanım desteği; model yerine poster kalabilir. Konsoldaki gerçek hatayı kontrol edin. |
 | Yeni dosya ekleyince build hata veriyor | Hata kaydındaki dosya/alanı düzeltin. Önceki siteyi silerek veya kontrolü kapatarak çözmeye çalışmayın. |

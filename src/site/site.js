@@ -8,7 +8,7 @@
   menu?.addEventListener('click', () => {
     const open = links.classList.toggle('open');
     menu.setAttribute('aria-expanded', String(open));
-    menu.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+    menu.setAttribute('aria-label', open ? (window.HD_MEDYA?.ui?.menuClose || 'Menüyü kapat') : (window.HD_MEDYA?.ui?.menuOpen || 'Menüyü aç'));
   });
   links?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
     links.classList.remove('open');
@@ -36,7 +36,7 @@
       data.get('email') ? 'E-posta: ' + String(data.get('email')).trim() : '',
       'Proje: ' + String(data.get('message')).trim()
     ]);
-    one('#formStatus').textContent = 'WhatsApp mesajınız hazırlandı. Açılan ekrandan gönderebilirsiniz.';
+    one('#formStatus').textContent = window.HD_MEDYA.ui?.forms.contact.success || 'Mesajınız WhatsApp’ta hazır.';
   });
 
   const analysis = one('#seoAnalysisForm');
@@ -63,7 +63,7 @@
       `Merhaba ${window.HD_MEDYA.business.name}, web sitem için ücretsiz SEO ön analizi istiyorum.`,
       'Site adresi: ' + url.href
     ]);
-    one('#analysisStatus').textContent = 'WhatsApp mesajınız hazır. Açılan ekrandan gönderebilirsiniz.';
+    one('#analysisStatus').textContent = window.HD_MEDYA.ui?.forms.analysis.success || 'Talebiniz WhatsApp’ta hazır.';
   });
 
   let scrollFrame = 0;

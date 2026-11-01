@@ -36,36 +36,10 @@
 <link rel="stylesheet" href="/brand-review.css">
 </head>
 <body class="content-page">
-<header class="nav-shell">
-<a class="brand" href="/" aria-label="{{business.name}} ana sayfa">
-<img class="brand-mark" src="/assets/hd-monogram.svg" alt="HD" width="58" height="40">
-<span class="brand-name">{{business.wordmark}}<small>YARATICI WEB STÜDYOSU</small>
-</span>
-</a>
-<nav class="nav-links" id="navLinks" aria-label="Ana menü">
-<a href="/#hizmetler">Çözümler</a>
-<a href="/#projeler">Projeler</a>
-<a href="/#fiyatlar">Paketler</a>
-<a href="/#surec">Yol Haritası</a>
-<a href="/#sss">Sorular</a>
-<a href="/deneyim/otomasyon/">Otomasyon</a><a href="/seo/">SEO</a><a href="/rehber/">Rehber</a></nav>
-<a class="nav-cta" href="/#teklif">Projenizi Konuşalım <span>↗</span>
-</a>
-<button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menüyü aç">☰</button>
-</header>
+{{sharedHeader}}
 <main id="content">{{articleMain}}{{pricingSection}}</main>
-<footer>
-<a class="footer-brand brand" href="/#ust" aria-label="{{business.name}} ana sayfa"><img class="brand-mark" src="/assets/hd-monogram.svg" alt="HD" width="58" height="40"><span class="brand-name">{{business.wordmark}}<small>YARATICI WEB STÜDYOSU</small></span></a>
-<p>Eskişehir’de işletmelere ve kurumsal firmalara özel web tasarım.</p>
-<a href="{{links.phone}}">{{business.phoneDisplay}}</a>
-<a href="{{links.instagram}}" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-<a href="/rehber/">Rehber</a>
-<a href="/#seo-analizi">Ücretsiz SEO Analizi</a>
-<a href="#content">Yukarı çık ↑</a>
-<small>© <span id="year">
-</span> {{business.name}}</small>
-<a class="footer-social-x" href="{{links.x}}" target="_blank" rel="noopener noreferrer">X ↗</a><a href="{{links.facebook}}" target="_blank" rel="noopener noreferrer">Facebook ↗</a><nav class="legal-links" aria-label="Yasal bilgiler"><a href="/yasal/gizlilik/">Gizlilik</a> · <a href="/yasal/cerezler/">Çerezler</a> · <a href="/yasal/kvkk/">KVKK</a></nav></footer>
-<a class="floating-contact" href="{{links.whatsapp}}" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+{{sharedFooter}}
+<a class="floating-contact" href="{{links.whatsapp}}" target="_blank" rel="noopener noreferrer">{{ui.copy.c_4206ac3f16ef}}</a>
 <script src="/site.js" defer>
 </script>
 <script src="/spontaneous.js" defer>

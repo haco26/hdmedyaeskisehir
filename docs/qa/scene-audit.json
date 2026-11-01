@@ -1,0 +1,622 @@
+[
+  {
+    "profile": "desktop",
+    "poster": {
+      "complete": true,
+      "width": 720,
+      "current": "http://127.0.0.1:4185/assets/hero-poster-960.webp"
+    },
+    "initial": {
+      "scene": "scheduled",
+      "loadPhase": "fallback"
+    },
+    "ready": {
+      "stage": {
+        "scene": "ready",
+        "loadPhase": "complete",
+        "loadDetail": "lighting",
+        "geometryCache": "hit",
+        "reliefVertices": "354114",
+        "reliefMax": "0.0283",
+        "sceneMode": "signature",
+        "material": "matte-aged-obsidian",
+        "geometryVersion": "machined-bezier-4",
+        "zoom": "1.00",
+        "rotation": "0",
+        "pitch": "0",
+        "materialWarm": "true",
+        "performanceMeasured": "true"
+      },
+      "paint": [
+        {
+          "name": "first-paint",
+          "time": 2560
+        },
+        {
+          "name": "first-contentful-paint",
+          "time": 2560
+        }
+      ],
+      "phases": [
+        {
+          "time": 2802,
+          "scene": "scheduled"
+        },
+        {
+          "time": 2852,
+          "scene": "scheduled",
+          "phase": "fallback"
+        },
+        {
+          "time": 4157,
+          "scene": "loading",
+          "detail": "engine",
+          "phase": "fallback"
+        },
+        {
+          "time": 4157,
+          "scene": "loading",
+          "detail": "engine",
+          "phase": "fallback"
+        },
+        {
+          "time": 4157,
+          "scene": "loading",
+          "detail": "engine",
+          "phase": "poster"
+        },
+        {
+          "time": 5982,
+          "scene": "loading",
+          "detail": "material",
+          "phase": "poster"
+        },
+        {
+          "time": 5982,
+          "scene": "loading",
+          "detail": "material",
+          "phase": "poster"
+        },
+        {
+          "time": 8536,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "poster"
+        },
+        {
+          "time": 8537,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "poster"
+        },
+        {
+          "time": 10188,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "poster"
+        },
+        {
+          "time": 10195,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "surface"
+        },
+        {
+          "time": 10735,
+          "scene": "loading",
+          "detail": "lighting",
+          "phase": "surface"
+        },
+        {
+          "time": 10735,
+          "scene": "loading",
+          "detail": "lighting",
+          "phase": "surface"
+        },
+        {
+          "time": 14710,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "surface"
+        },
+        {
+          "time": 14716,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "complete"
+        },
+        {
+          "time": 15160,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "complete"
+        },
+        {
+          "time": 15555,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "complete"
+        }
+      ],
+      "draws": 104,
+      "preparation": [
+        10558
+      ],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:4185/scene-performance.css",
+          "bytes": 2484,
+          "duration": 70
+        },
+        {
+          "url": "http://127.0.0.1:4185/scene-loader.js?v=performance-2",
+          "bytes": 2744,
+          "duration": 24
+        },
+        {
+          "url": "http://127.0.0.1:4185/scene.js?v=performance-2",
+          "bytes": 38929,
+          "duration": 33
+        },
+        {
+          "url": "http://127.0.0.1:4185/scene-cache.js",
+          "bytes": 3688,
+          "duration": 9
+        },
+        {
+          "url": "http://127.0.0.1:4185/vendor/three/build/three.module.js",
+          "bytes": 1281047,
+          "duration": 30
+        },
+        {
+          "url": "http://127.0.0.1:4185/vendor/three/examples/jsm/environments/RoomEnvironment.js",
+          "bytes": 4035,
+          "duration": 18
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/materials/obsidian-normal.png",
+          "bytes": 1192998,
+          "duration": 25
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/materials/obsidian-roughness.png",
+          "bytes": 406578,
+          "duration": 37
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/hd-monogram-surface-v2.bin.gz",
+          "bytes": 2033461,
+          "duration": 31
+        }
+      ]
+    },
+    "offscreenDraws": 0,
+    "errors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4185/assets/materials/obsidian-normal.png",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4185/assets/materials/obsidian-roughness.png",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4185/assets/hd-monogram-surface-v2.bin.gz",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "profile": "mobile",
+    "poster": {
+      "complete": true,
+      "width": 372,
+      "current": "http://127.0.0.1:4185/assets/hero-poster-960.webp"
+    },
+    "initial": {
+      "scene": "loading",
+      "loadPhase": "poster",
+      "loadDetail": "material"
+    },
+    "ready": {
+      "stage": {
+        "scene": "ready",
+        "loadPhase": "complete",
+        "loadDetail": "lighting",
+        "geometryCache": "hit",
+        "reliefVertices": "149292",
+        "reliefMax": "0.0283",
+        "sceneMode": "signature",
+        "material": "matte-aged-obsidian",
+        "geometryVersion": "machined-bezier-4",
+        "zoom": "1.00",
+        "rotation": "0",
+        "pitch": "0",
+        "materialWarm": "true",
+        "performanceMeasured": "true"
+      },
+      "paint": [
+        {
+          "name": "first-paint",
+          "time": 1100
+        },
+        {
+          "name": "first-contentful-paint",
+          "time": 1100
+        }
+      ],
+      "phases": [
+        {
+          "time": 568,
+          "scene": "scheduled"
+        },
+        {
+          "time": 610,
+          "scene": "scheduled",
+          "phase": "fallback"
+        },
+        {
+          "time": 1596,
+          "scene": "loading",
+          "detail": "engine",
+          "phase": "fallback"
+        },
+        {
+          "time": 1596,
+          "scene": "loading",
+          "detail": "engine",
+          "phase": "fallback"
+        },
+        {
+          "time": 1596,
+          "scene": "loading",
+          "detail": "engine",
+          "phase": "poster"
+        },
+        {
+          "time": 2442,
+          "scene": "loading",
+          "detail": "material",
+          "phase": "poster"
+        },
+        {
+          "time": 2443,
+          "scene": "loading",
+          "detail": "material",
+          "phase": "poster"
+        },
+        {
+          "time": 6218,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "poster"
+        },
+        {
+          "time": 6218,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "poster"
+        },
+        {
+          "time": 6711,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "poster"
+        },
+        {
+          "time": 6711,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "surface"
+        },
+        {
+          "time": 6800,
+          "scene": "loading",
+          "detail": "lighting",
+          "phase": "surface"
+        },
+        {
+          "time": 6801,
+          "scene": "loading",
+          "detail": "lighting",
+          "phase": "surface"
+        },
+        {
+          "time": 7500,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "surface"
+        },
+        {
+          "time": 7501,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "complete"
+        },
+        {
+          "time": 8778,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "complete"
+        },
+        {
+          "time": 10062,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "complete"
+        }
+      ],
+      "draws": 100,
+      "preparation": [
+        5905
+      ],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:4185/scene-performance.css",
+          "bytes": 2484,
+          "duration": 26
+        },
+        {
+          "url": "http://127.0.0.1:4185/scene-loader.js?v=performance-2",
+          "bytes": 2744,
+          "duration": 14
+        },
+        {
+          "url": "http://127.0.0.1:4185/scene.js?v=performance-2",
+          "bytes": 38929,
+          "duration": 39
+        },
+        {
+          "url": "http://127.0.0.1:4185/scene-cache.js",
+          "bytes": 3688,
+          "duration": 65
+        },
+        {
+          "url": "http://127.0.0.1:4185/vendor/three/build/three.module.js",
+          "bytes": 1281047,
+          "duration": 237
+        },
+        {
+          "url": "http://127.0.0.1:4185/vendor/three/examples/jsm/environments/RoomEnvironment.js",
+          "bytes": 4035,
+          "duration": 65
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/materials/obsidian-normal.png",
+          "bytes": 1192998,
+          "duration": 85
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/materials/obsidian-roughness.png",
+          "bytes": 406578,
+          "duration": 29
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/hd-monogram-surface-v2-mobile.bin.gz",
+          "bytes": 1036447,
+          "duration": 31
+        }
+      ]
+    },
+    "offscreenDraws": 0,
+    "errors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4185/assets/materials/obsidian-roughness.png",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4185/assets/hd-monogram-surface-v2-mobile.bin.gz",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4185/assets/materials/obsidian-normal.png",
+        "status": 200
+      }
+    ]
+  },
+  {
+    "profile": "saveData",
+    "deferred": {
+      "scene": "deferred",
+      "threeRequests": 0
+    }
+  },
+  {
+    "profile": "saveData",
+    "poster": {
+      "complete": true,
+      "width": 372,
+      "current": "http://127.0.0.1:4185/assets/hero-poster-960.webp"
+    },
+    "initial": {
+      "scene": "deferred",
+      "loadPhase": "fallback"
+    },
+    "ready": {
+      "stage": {
+        "scene": "ready",
+        "loadPhase": "complete",
+        "loadDetail": "lighting",
+        "geometryCache": "hit",
+        "reliefVertices": "149292",
+        "reliefMax": "0.0283",
+        "sceneMode": "signature",
+        "material": "matte-aged-obsidian",
+        "geometryVersion": "machined-bezier-4",
+        "zoom": "1.00",
+        "rotation": "0",
+        "pitch": "0",
+        "materialWarm": "true",
+        "performanceMeasured": "true"
+      },
+      "paint": [
+        {
+          "name": "first-paint",
+          "time": 796
+        },
+        {
+          "name": "first-contentful-paint",
+          "time": 796
+        }
+      ],
+      "phases": [
+        {
+          "time": 631,
+          "scene": "deferred"
+        },
+        {
+          "time": 831,
+          "scene": "deferred",
+          "phase": "fallback"
+        },
+        {
+          "time": 4469,
+          "scene": "loading",
+          "detail": "engine",
+          "phase": "fallback"
+        },
+        {
+          "time": 4469,
+          "scene": "loading",
+          "detail": "engine",
+          "phase": "fallback"
+        },
+        {
+          "time": 4470,
+          "scene": "loading",
+          "detail": "engine",
+          "phase": "poster"
+        },
+        {
+          "time": 4971,
+          "scene": "loading",
+          "detail": "material",
+          "phase": "poster"
+        },
+        {
+          "time": 4972,
+          "scene": "loading",
+          "detail": "material",
+          "phase": "poster"
+        },
+        {
+          "time": 5060,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "poster"
+        },
+        {
+          "time": 5060,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "poster"
+        },
+        {
+          "time": 9292,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "poster"
+        },
+        {
+          "time": 9294,
+          "scene": "loading",
+          "detail": "geometry",
+          "phase": "surface"
+        },
+        {
+          "time": 9503,
+          "scene": "loading",
+          "detail": "lighting",
+          "phase": "surface"
+        },
+        {
+          "time": 9504,
+          "scene": "loading",
+          "detail": "lighting",
+          "phase": "surface"
+        },
+        {
+          "time": 10265,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "surface"
+        },
+        {
+          "time": 10266,
+          "scene": "ready",
+          "detail": "lighting",
+          "phase": "complete"
+        }
+      ],
+      "draws": 86,
+      "preparation": [
+        5797
+      ],
+      "resources": [
+        {
+          "url": "http://127.0.0.1:4185/scene-performance.css",
+          "bytes": 2484,
+          "duration": 41
+        },
+        {
+          "url": "http://127.0.0.1:4185/scene-loader.js?v=performance-2",
+          "bytes": 2744,
+          "duration": 48
+        },
+        {
+          "url": "http://127.0.0.1:4185/scene.js?v=performance-2",
+          "bytes": 38929,
+          "duration": 9
+        },
+        {
+          "url": "http://127.0.0.1:4185/scene-cache.js",
+          "bytes": 3688,
+          "duration": 27
+        },
+        {
+          "url": "http://127.0.0.1:4185/vendor/three/examples/jsm/environments/RoomEnvironment.js",
+          "bytes": 4035,
+          "duration": 37
+        },
+        {
+          "url": "http://127.0.0.1:4185/vendor/three/build/three.module.js",
+          "bytes": 1281047,
+          "duration": 37
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/materials/obsidian-normal.png",
+          "bytes": 1192998,
+          "duration": 19
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/materials/obsidian-roughness.png",
+          "bytes": 406578,
+          "duration": 17
+        },
+        {
+          "url": "http://127.0.0.1:4185/assets/hd-monogram-surface-v2-mobile.bin.gz",
+          "bytes": 1036447,
+          "duration": 20
+        }
+      ]
+    },
+    "offscreenDraws": 0,
+    "errors": [],
+    "resources": [
+      {
+        "url": "http://127.0.0.1:4185/assets/materials/obsidian-normal.png",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4185/assets/materials/obsidian-roughness.png",
+        "status": 200
+      },
+      {
+        "url": "http://127.0.0.1:4185/assets/hd-monogram-surface-v2-mobile.bin.gz",
+        "status": 200
+      }
+    ]
+  }
+]

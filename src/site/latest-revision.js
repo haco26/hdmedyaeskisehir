@@ -4,23 +4,16 @@
   document.documentElement.dataset.latestRevision = 'ready';
   const hero = document.querySelector('main#ust > section.hero');
   if (hero && !document.querySelector('.service-current')) {
-    const items = [
-      ['Web tasarım', 'İşinizin dijital sahnesi.', '/hizmetler/isletme-web-sitesi/'],
-      ['E-ticaret', 'Ürünleriniz öne çıksın.', '/hizmetler/e-ticaret-web-sitesi/'],
-      ['Kurumsal web', 'Markanız güçlü görünsün.', '/hizmetler/kurumsal-web-sitesi/'],
-      ['Site yenileme', 'Yeni bir başlangıca yer açın.', '/hizmetler/web-sitesi-yenileme/'],
-      ['Özel yazılım', 'İş akışınıza göre düşünelim.', '/hizmetler/ozel-web-yazilimi/'],
-      ['SEO ve görünürlük', 'Doğru soruda karşılarına çıkın.', '/seo/']
-    ];
+    const items = window.HD_MEDYA.ui.currentServices;
     const section = document.createElement('section');
     section.className = 'service-current';
     section.setAttribute('aria-label', 'İşinize göre dijital çözümler');
     const heading = document.createElement('div'); heading.className = 'service-current-heading';
-    const caption = document.createElement('p'); caption.textContent = 'İŞİNİZ BİR KALIBA SIĞMAZ.';
-    const toggle = document.createElement('button');toggle.type = 'button';toggle.className = 'service-current-toggle';toggle.textContent = 'Akışı durdur';toggle.setAttribute('aria-pressed', 'false');
-    toggle.addEventListener('click', () => {const paused = section.classList.toggle('is-paused');toggle.setAttribute('aria-pressed', String(paused));toggle.textContent = paused ? 'Akışı sürdür' : 'Akışı durdur';});
+    const caption = document.createElement('p'); caption.textContent = window.HD_MEDYA.ui.controls.flowCaption;
+    const toggle = document.createElement('button');toggle.type = 'button';toggle.className = 'service-current-toggle';toggle.textContent = window.HD_MEDYA.ui.controls.pause;toggle.setAttribute('aria-pressed', 'false');
+    toggle.addEventListener('click', () => {const paused = section.classList.toggle('is-paused');toggle.setAttribute('aria-pressed', String(paused));toggle.textContent = paused ? window.HD_MEDYA.ui.controls.resume : window.HD_MEDYA.ui.controls.pause;});
     heading.append(caption,toggle);
-    const window = document.createElement('div');window.className = 'service-current-window';
+    const currentWindow = document.createElement('div');currentWindow.className = 'service-current-window';
     const track = document.createElement('div');track.className = 'service-current-track';
     for (let copy = 0; copy < 2; copy++) {
       const group = document.createElement('div');group.className = 'service-current-group';
@@ -30,11 +23,11 @@
         if (!copy) card.href = href; else card.addEventListener('click', () => location.assign(href));
         const label = document.createElement('small');label.textContent = name;
         const title = document.createElement('strong');title.textContent = slogan;
-        const action=document.createElement('span');action.className='service-current-action';action.textContent='Çözümü incele ↗';card.append(label,title,action);group.append(card);
+        const action=document.createElement('span');action.className='service-current-action';action.textContent=window.HD_MEDYA.ui.controls.explore;card.append(label,title,action);group.append(card);
       }
       track.append(group);
     }
-    window.append(track);section.append(heading,window);hero.after(section);
+    currentWindow.append(track);section.append(heading,currentWindow);hero.after(section);
   }
   const proof = document.querySelector('.reference-proof');
   if (proof) {

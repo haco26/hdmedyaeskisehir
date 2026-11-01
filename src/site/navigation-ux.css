@@ -1,0 +1,29 @@
+/* Shared interaction finish: SVG icons, native controls and quiet tactile feedback. */
+.utility-dock {max-width:calc(100vw - 24px);bottom:max(14px,calc(env(safe-area-inset-bottom) + 8px));}
+.utility-scroll {position:relative;touch-action:pan-y;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none;overflow:visible;}
+.utility-scroll::after {content:"";position:absolute;inset:2px;border:2px solid transparent;border-radius:50%;pointer-events:none;opacity:0;}
+.utility-scroll.is-holding::after {opacity:1;border-top-color:#ff5a36;border-right-color:#cfff46;animation:dock-hold-ring .55s linear both;}
+.utility-scroll:active:not(:disabled) {background:#cfff46;transform:scale(.94);}
+@keyframes dock-hold-ring {from{transform:rotate(-100deg) scale(.86);opacity:.45}to{transform:rotate(260deg) scale(1);opacity:1}}
+@media(hover:hover) and (pointer:fine) {
+ .utility-scroll:hover:not(:disabled){background:#cfff46;box-shadow:0 0 0 4px #cfff4626;}
+}
+/* Avoid iOS focus zoom. Selection remains native and keyboard accessible. */
+@media(max-width:850px) {
+ input:not([type=checkbox]):not([type=radio]):not([type=range]),select,textarea {font-size:16px!important;}
+ .utility-dock {padding:4px!important;gap:1px!important;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
+ .utility-dock .utility-scroll,.utility-dock .floating-contact {width:44px;min-width:44px;min-height:44px;height:44px;}
+ .utility-dock .floating-contact {padding:0!important;}
+ .utility-dock .floating-contact:focus-visible .utility-contact-label {position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);}
+ .utility-dock:has(:focus-visible) {translate:0 0!important;opacity:1!important;pointer-events:auto!important;}
+ .faq-list summary {min-height:56px;padding-block:18px;}
+ .nav-shell #menuToggle {min-width:44px;min-height:44px;}
+ .nav-links.open a {min-height:44px;display:flex;align-items:center;}
+ .contact form,.auto-quote form,.auto-quote-form,#auto-quote-form,#seoAnalysisForm {min-width:0;max-width:100%;}
+ .form-legal,.lead-consent,.lead-consent label {overflow-wrap:anywhere;}
+ .form-legal a,.lead-consent a {text-underline-offset:.2em;}
+}
+@media(prefers-reduced-motion:reduce) {
+ .utility-scroll.is-holding::after {animation:none;border-color:#ff5a36;opacity:1;}
+ .utility-scroll:active:not(:disabled) {transform:none;}
+}

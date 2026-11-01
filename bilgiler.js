@@ -239,10 +239,10 @@ export default {
   },
   positioning: {
     heroPreline: 'Eskişehir’de yazılım ve web tasarım.',
-    heroCopy: `${name}, Eskişehir’de küçük işletmeler ve kurumsal firmalar için web sitesi, e-ticaret ve özel web yazılımı geliştirir. İşinizi net anlatan, mobilde rahat kullanılan ve iletişime geçmeyi kolaylaştıran bir site planlayalım. Türkiye ve yurt dışındaki projeleri de uzaktan değerlendirebiliriz.`
+    heroCopy: `İşinizi doğru anlatan bir web sitesi. Ekibinize zaman kazandıran bir iş akışı. ${name} ile web tasarım, e-ticaret ve özel yazılımı işletmenizin ihtiyacına göre planlayın. Eskişehir’de yüz yüze; Türkiye ve yurt dışındaki projelerde uzaktan birlikte çalışalım.`
   },
   references, pricing, automationPricing, socialMediaPricing, services, faq, softwareApplication,
-  legal: { version: '2026-11-01', controllerName: '', registrationNumber: '', acknowledgement: 'İletişim talebine ilişkin aydınlatma metnini okudum.' },
+  legal: { version: '2026-11-01', controllerName: 'Hacer Durukan', registrationNumber: '', acknowledgement: 'İletişim talebine ilişkin aydınlatma metnini okudum.' },
   organization: {founder: {'@type':'Person',name:contactName}, logo: domain + '/assets/hd-monogram.svg', contactPoint: {'@type':'ContactPoint', telephone: phoneE164, contactType:'Proje ve teklif', availableLanguage:'tr'}},
   bots: ['OAI-SearchBot','GPTBot','ChatGPT-User','PerplexityBot','Perplexity-User','Googlebot','Bingbot','ClaudeBot','Claude-SearchBot','Claude-User','CCBot','Google-Extended','Applebot','Applebot-Extended','Amazonbot'],
   build: {basePath: '', cname: true, styles: [

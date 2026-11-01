@@ -1,4 +1,7 @@
 import { addSecurityPolicy } from './security-policy.mjs';
+import { vectorizeHtml, vectorizeCss } from '../src/site/vector-icons.js';
+import defaultUi from '../mimari.js';
+import { applyExperience, sharedHeader, sharedFooter } from './experience-system.mjs';
 import { decorateArticleCategories } from './article-categories.mjs';
 import { injectLeadConsent, legalIdentityHtml } from './lead-consent.mjs';
 import { loadArticles } from './article-content.mjs';
@@ -6,7 +9,7 @@ import { pricingSection, insertAutomationPricing, insertSocialMediaPricing } fro
 import { promises as fs } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, createHash } from 'node:crypto';
 
 const defaultRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const textExtensions = new Set(['.html', '.css', '.js', '.mjs', '.json', '.xml', '.txt', '.svg', '.md']);
@@ -102,7 +105,7 @@ function rewritePaths(source, extension, base) {
   if (extension === '.html' || extension === '.svg') {
     source = source.replace(/\b(href|src|action|poster|data-src)=(['"])(\/[^'"<>]*?)\2/gi,
       (_, attribute, quote, url) => `${attribute}=${quote}${atBase(url, base)}${quote}`);
-    source = source.replace(/\bsrcset=(['"])([^'"<>]+)\1/gi, (_, quote, value) => `srcset=${quote}${value.split(',').map(part => part.trim().split(/\s+/).map((piece, index) => index === 0 ? atBase(piece, base) : piece).join(' ')).join(', ')}${quote}`);
+    source = source.replace(/\b(imagesrcset|srcset)=(['"])([^'"<>]+)\2/gi, (_, attribute, quote, value) => `${attribute}=${quote}${value.split(',').map(part => part.trim().split(/\s+/).map((piece, index) => index === 0 ? atBase(piece, base) : piece).join(' ')).join(', ')}${quote}`);
   }
   if (extension === '.css' || extension === '.html' || extension === '.svg') {
     source = source.replace(/url\(\s*(['"]?)(\/[^)'"\s]+)\1\s*\)/gi, (_, quote, url) => `url(${quote}${atBase(url, base)}${quote})`);
@@ -161,7 +164,7 @@ function sitemapUrl(html, relative, origin) {
   return canonical?.href || `${origin}${fallback}`;
 }
 
-function bundleStyles(html, styles, base) {
+function bundleStyles(html, styles, base, name='site.css') {
   if (!styles.length) return html;
   let inserted = false;
   return html.replace(/<link\b[^>]*>/gi, tag => {
@@ -171,7 +174,7 @@ function bundleStyles(html, styles, base) {
     if (!styles.includes(href)) return tag;
     if (inserted) return '';
     inserted = true;
-    return `<link rel="stylesheet" href="${base}/site.css">`;
+    return `<link rel="stylesheet" href="${base}/${name}">`;
   });
 }
 
@@ -182,6 +185,10 @@ export async function buildSite(options = {}) {
   if (source === output || source.startsWith(`${output}${path.sep}`) || output.startsWith(`${source}${path.sep}`)) throw new Error('Source and output directories must be separate');
   const configPath = path.join(root, 'bilgiler.js');
   const { default: config } = await import(`${pathToFileURL(configPath).href}?build=${randomUUID()}`);
+  let ui = defaultUi;
+  try { await fs.access(path.join(root, 'mimari.js')); ui = (await import(`${pathToFileURL(path.join(root,'mimari.js')).href}?build=${randomUUID()}`)).default; }
+  catch(error) { if(error.code !== 'ENOENT') throw error; }
+  config.ui=ui;
   if (!config?.business?.name || !config.business.domain) throw new Error('bilgiler.js must export business.name and business.domain');
   const domain = new URL(/^https?:\/\//.test(config.business.domain) ? config.business.domain : `https://${config.business.domain}`);
   if (!['http:', 'https:'].includes(domain.protocol) || domain.pathname !== '/' || domain.search || domain.hash || domain.username || domain.password) throw new Error('business.domain must be a site origin, without a path or credentials');
@@ -202,18 +209,20 @@ export async function buildSite(options = {}) {
   };
   const schemas = schemaContext(config, origin);
   const publicData = {
-    business: config.business, references: config.references || [], pricing: config.pricing || [], automationPricing: config.automationPricing || null, socialMediaPricing: config.socialMediaPricing || null,
+    ui: {...ui, copy:undefined, navigation:ui.navigationControls}, business: config.business, references: config.references || [], pricing: config.pricing || [], automationPricing: config.automationPricing || null, socialMediaPricing: config.socialMediaPricing || null,
     services: config.services || [], faq: config.faq || [], links,
     softwareApplication: schemas.software,
     site: { origin, basePath: base }
   };
   const context = {
-    ...config, links, site: publicData.site,
+    ...config, ui, links, site: publicData.site,
     software: config.softwareApplication || config.software || {},
     referencesById: Object.fromEntries((config.references || []).map(item => [item.id, item])),
     pricingById: Object.fromEntries((config.pricing || []).map(item => [item.id, item]))
   };
   const raw = {
+    sharedHeader: sharedHeader(config,ui),
+    sharedFooter: sharedFooter(config,ui,new Date().getFullYear()),
     organizationSchema: json(schemas.organization),
     softwareSchema: schemas.software ? json(schemas.software) : 'null',
     addressesHtml: schemas.addressesHtml, faqHtml: schemas.faqHtml,
@@ -227,7 +236,7 @@ export async function buildSite(options = {}) {
   const stage = inside(root, path.join(working, `stage-${randomUUID()}`), 'Build stage');
   const backup = inside(root, path.join(working, `previous-${randomUUID()}`), 'Build backup');
   await fs.mkdir(stage, { recursive: true });
-  const urls = [], generated = [];
+  const urls = [], generated = [], styleBundles = new Map();
   let previousMoved = false;
   try {
     for (const relative of sourceFiles) {
@@ -238,15 +247,47 @@ export async function buildSite(options = {}) {
       if (textExtensions.has(extension)) {
         let content = render(articleContent.pages.get(relative) ?? await fs.readFile(path.join(source, ...relative.split('/')), 'utf8'), context, raw, relative);
         if (extension === '.html') {
+          if(ui.pageTitles?.[relative]) {
+            const title=escapeHtml(ui.pageTitles[relative]);
+            content=content.replace(/<title>[\s\S]*?<\/title>/i,`<title>${title}</title>`).replace(/<meta\b[^>]*property="og:title"[^>]*>/i,`<meta property="og:title" content="${title}">`);
+          }
+          if (sourceFiles.includes('design-system.css')) content = applyExperience(content,config,ui,new Date().getFullYear());
           if(relative==='rehber/index.html') content = decorateArticleCategories(content);
           content = injectLeadConsent(content, config);
-          if (relative!=='404.html' && !content.includes('data-shared-pricing')) content = content.replace(/<\/main>/i, pricingSection(config) + '\n</main>');
-          content = insertAutomationPricing(content, config, relative);
-          content = insertSocialMediaPricing(content, config, relative);
+          const marketingPage = relative==='index.html' || /^(hizmetler|deneyim|seo)\//.test(relative);
+          if (marketingPage && !content.includes('data-shared-pricing')) content = content.replace(/<\/main>/i, pricingSection(config) + '\n</main>');
+          if(marketingPage) content = insertAutomationPricing(content, config, relative);
+          if(marketingPage) content = insertSocialMediaPricing(content, config, relative);
+          if(!marketingPage) content=content.replace(/<section\b[^>]*data-shared-pricing[^>]*>[\s\S]*?<\/section>/gi,'');
           if (config.pricing?.length) content = content.replace('</head>', '<link rel="stylesheet" href="/fiyat-bolumu.css">\n</head>');
-          content = bundleStyles(content, styles, base);
+          const requested=new Set([...content.matchAll(/<link\b[^>]*>/gi)].map(m=>attributes(m[0])).filter(a=>a.rel==='stylesheet').map(a=>(a.href||'').split(/[?#]/)[0].replace(/^\.?\//,'')));
+          const selected=styles.filter(s=>requested.has(s));
+          const bundle=relative==='index.html'?'site.css':`styles-${createHash('sha256').update(selected.join('|')).digest('hex').slice(0,10)}.css`;
+          if(selected.length)styleBundles.set(bundle,selected);
+          content = bundleStyles(content, selected, base, bundle);
+          if(sourceFiles.includes('local-fonts.css')) {
+            content=content.replace(/<link\b[^>]*(?:fonts\.googleapis\.com|fonts\.gstatic\.com)[^>]*>/gi,'');
+            content=content.replace('</head>','<link rel="stylesheet" href="/local-fonts.css">\n</head>');
+          }
+          if(sourceFiles.includes('scene-loader.js')) content=content.replace(/src="(?:\.\/|\/)?scene\.js[^"<>]*"/g,'src="/scene-loader.js?v=performance-2"');
+          if(relative==='index.html'&&sourceFiles.includes('assets/hero-poster-960.webp')) {
+            const candidates='/assets/hero-poster-640.webp 640w, /assets/hero-poster-960.webp 960w, /assets/hero-poster-1280.webp 1280w';
+            const sizes='(max-width: 850px) 90vw, 50vw';
+            content=content.replace(/<link\b[^>]*rel="preload"[^>]*as="image"[^>]*hero-sculpture[^>]*>/gi,`<link rel="preload" as="image" href="/assets/hero-poster-960.webp" imagesrcset="${candidates}" imagesizes="${sizes}" fetchpriority="high">`);
+            content=content.replace(/<img\b[^>]*src="[^"<>]*hero-sculpture[^"<>]*"[^>]*>/gi,tag=>tag.replace(/src="[^"]+"/,'src="/assets/hero-poster-960.webp"').replace(/>$/,` srcset="${candidates}" sizes="${sizes}">`));
+          }
+          if(relative==='index.html'&&sourceFiles.includes('scene-performance.css')) content=content.replace('</head>','<link rel="stylesheet" href="/scene-performance.css">\n</head>');
+          content=content.replace(/<img\b[^>]*>/gi,tag=>{
+            if(!/\bdecoding=/.test(tag))tag=tag.replace(/>$/,' decoding="async">');
+            if(!/\bloading=|fetchpriority="high"|brand-mark/.test(tag))tag=tag.replace(/>$/,' loading="lazy">');
+            return tag;
+          });
+          if (sourceFiles.includes('design-system.css')) content = content.replace('</head>', '<link rel="stylesheet" href="/design-system.css">\n<link rel="stylesheet" href="/navigation-ux.css">\n</head>');
+          content = vectorizeHtml(content);
+          content = content.replace('</head>', '<link rel="stylesheet" href="/vector-icons.css?v=1">\n<script type="module" src="/vector-icons.js?v=1"></script>\n</head>');
           content = content.replace(/<head>([\s\S]*?)<\/head>/i, (_, head) => '<head>' + head.replace(/\r?\n(?:[ \t]*\r?\n)+/g, '\n') + '</head>');
         }
+        if (extension === '.css') content = vectorizeCss(content);
         content = rewritePaths(content, extension, base);
         if(extension==='.html')content=addSecurityPolicy(content);
         await fs.writeFile(destination, content, 'utf8');
@@ -259,11 +300,11 @@ export async function buildSite(options = {}) {
       }
       generated.push(relative);
     }
-    if (styles.length) {
+    for (const [name,bundleStyles] of styleBundles) {
       const chunks = [];
-      for (const style of styles) chunks.push(`/* Source: ${style} */\n${render(await fs.readFile(path.join(source, ...style.split('/')), 'utf8'), context, raw, style)}`);
-      await fs.writeFile(path.join(stage, 'site.css'), rewritePaths(chunks.join('\n\n'), '.css', base), 'utf8');
-      generated.push('site.css');
+      for (const style of bundleStyles) chunks.push(`/* Source: ${style} */\n${render(await fs.readFile(path.join(source, ...style.split('/')), 'utf8'), context, raw, style)}`);
+      await fs.writeFile(path.join(stage, name), rewritePaths(vectorizeCss(chunks.join('\n\n')), '.css', base), 'utf8');
+      generated.push(name);
     }
     const bots = config.bots || ['GPTBot', 'OAI-SearchBot', 'ChatGPT-User', 'PerplexityBot', 'Perplexity-User', 'Googlebot', 'Bingbot', 'ClaudeBot', 'Claude-SearchBot', 'Claude-User', 'CCBot', 'Google-Extended', 'Applebot', 'Applebot-Extended', 'Amazonbot'];
     if (!Array.isArray(bots) || bots.some(bot => /[\r\n]/.test(String(bot)))) throw new Error('bots must be an array of crawler agent names');
@@ -271,7 +312,7 @@ export async function buildSite(options = {}) {
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[...new Set(urls)].sort().map(url => `  <url><loc>${escapeHtml(url)}</loc></url>`).join('\n')}\n</urlset>\n`;
     await fs.writeFile(path.join(stage, 'robots.txt'), robots, 'utf8');
     await fs.writeFile(path.join(stage, 'sitemap.xml'), sitemap, 'utf8');
-    await fs.writeFile(path.join(stage, 'site-data.js'), `// Generated from bilgiler.js. Change the source file and rebuild.\nwindow.HD_MEDYA = Object.freeze(${json(publicData)});\n`, 'utf8');
+    await fs.writeFile(path.join(stage, 'site-data.js'), rewritePaths(`// Generated from bilgiler.js + mimari.js. Change source and rebuild.\nwindow.HD_MEDYA = Object.freeze(${json(publicData)});\n`,'.js',base), 'utf8');
     await fs.writeFile(path.join(stage, '.nojekyll'), '');
     generated.push('robots.txt', 'sitemap.xml', 'site-data.js', '.nojekyll');
     if (config.build?.cname !== false) {

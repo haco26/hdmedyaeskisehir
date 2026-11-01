@@ -11,14 +11,18 @@ async function start() {
 
   try {
     const motionPreference = matchMedia('(prefers-reduced-motion: reduce)');
+    const mobileScene = matchMedia('(max-width: 850px)').matches || matchMedia('(pointer: coarse)').matches;
+    stage.dataset.loadDetail = 'material';
+    stage.dispatchEvent(new CustomEvent('hd:scene-progress', {detail:{phase:'material'}}));
+    const bakedGeometry = readGeometry();
     let reduced = motionPreference.matches;
     const renderer = new THREE.WebGLRenderer({
       canvas,
       alpha: true,
       antialias: true,
-      powerPreference: 'high-performance'
+      powerPreference: mobileScene ? 'low-power' : 'high-performance'
     });
-    renderer.setPixelRatio(Math.min(Math.max(devicePixelRatio || 1, 1.25), 2));
+    renderer.setPixelRatio(Math.min(devicePixelRatio || 1, mobileScene ? 1.5 : 2));
     renderer.setClearColor(0x000000, 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -74,11 +78,12 @@ async function start() {
     room.dispose();
 
     const loader = new THREE.TextureLoader();
-    const [normal, roughness, goldNormal] = await Promise.all([
+    const [normal, roughness] = await Promise.all([
       loader.loadAsync('./assets/materials/obsidian-normal.png'),
-      loader.loadAsync('./assets/materials/obsidian-roughness.png'),
-      loader.loadAsync('./assets/materials/gold-normal.png')
+      loader.loadAsync('./assets/materials/obsidian-roughness.png')
     ]);
+    // Gold and obsidian previously fetched two byte-identical normal maps.
+    const goldNormal = normal.clone();
     for (const texture of [normal, roughness, goldNormal]) {
       texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
       texture.repeat.set(1.25, 1.25);
@@ -276,7 +281,8 @@ async function start() {
 
     // One continuous solid: cap, rounded rim and side share a boundary.
     // Separate overlapping shells previously cut through each other on curves.
-    const cachedGeometry = await readGeometry();
+    stage.dataset.loadDetail = 'geometry';
+    const cachedGeometry = await bakedGeometry;
     stage.dataset.geometryCache = cachedGeometry ? 'hit' : 'miss';
     for (const shape of cachedGeometry ? [null] : createReferenceShapes(THREE)) {
       let geometry;
@@ -304,8 +310,8 @@ async function start() {
 
     // The off-axis sweep and alternating broad/edge-on folds must read on white.
     const TAU = Math.PI * 2;
-    const ribbonSegments = 384;
-    const crossSegments = 24;
+    const ribbonSegments = mobileScene ? 192 : 384;
+    const crossSegments = mobileScene ? 12 : 24;
     function ribbonPoint(angle, across, depth, target = new THREE.Vector3()) {
       const c = Math.cos(angle), s = Math.sin(angle);
       const center = new THREE.Vector3(
@@ -420,7 +426,7 @@ async function start() {
     const key = new THREE.DirectionalLight(0xfff8ef, 4);
     key.position.set(-3, 6, 5);
     key.castShadow = true;
-    key.shadow.mapSize.set(1024, 1024);
+    key.shadow.mapSize.set(mobileScene ? 512 : 1024, mobileScene ? 512 : 1024);
     Object.assign(key.shadow.camera, { left: -5, right: 5, top: 5, bottom: -5 });
     key.shadow.normalBias = .02;
     scene.add(key);
@@ -737,7 +743,6 @@ async function start() {
         ribbonOrbit.rotation.y = Math.sin(ringTime * .12) * .16;
         ribbonOrbit.rotation.x = Math.sin(ringTime * .09) * .09;
         dirty = true;
-        stage.dataset.ringPhase = ringTime.toFixed(2);
       }
       if (dirty) {
         sculpture.scale.setScalar(currentScale);
@@ -754,7 +759,7 @@ async function start() {
       else if (!reduced && !pulse) pulse = setTimeout(() => {
         pulse = 0;
         if (visible && !document.hidden && !disposed && !unavailable && !transitionPaused) requestRender();
-      }, 1000 / 24);
+      }, 1000 / (mobileScene ? 18 : 24));
     }
     // Compile/upload while the complete poster stays visible. The first
     // exposed frame already uses its final camera, material and contour.
@@ -767,6 +772,7 @@ async function start() {
     camera.position.set(.08, .12, currentZ);
     camera.lookAt(0, 0, 0);
     await Promise.all([normal, roughness, goldNormal].map(texture => Promise.resolve(texture.image.decode?.()).catch(() => {})));
+    stage.dataset.loadDetail = 'lighting';
     if (renderer.compileAsync) await renderer.compileAsync(scene, camera);
     else renderer.compile(scene, camera);
     renderer.render(scene, camera);

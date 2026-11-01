@@ -7,7 +7,7 @@
 <title>Çerezler ve tarayıcı verileri | {{business.name}}</title>
 <meta name="description" content="Çerezler ve tarayıcı verileri ve site veri akışına ilişkin bilgilendirme.">
 <link rel="canonical" href="{{site.origin}}/yasal/cerezler/">
-<meta property="og:title" content="Size Özel Web Tasarım | {{business.name}}">
+<meta property="og:title" content="Çerezler ve işlevsel önbellek | {{business.name}}">
 <meta property="og:description" content="Çerezler ve tarayıcı verileri ve site veri akışına ilişkin bilgilendirme.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{site.origin}}/yasal/cerezler/">
@@ -40,36 +40,19 @@
 <link rel="stylesheet" href="/brand-review.css">
 </head>
 <body class="content-page">
-<header class="nav-shell">
-<a class="brand" href="/" aria-label="{{business.name}} ana sayfa">
-<img class="brand-mark" src="/assets/hd-monogram.svg" alt="HD" width="58" height="40">
-<span class="brand-name">{{business.wordmark}}<small>YARATICI WEB STÜDYOSU</small>
-</span>
-</a>
-<nav class="nav-links" id="navLinks" aria-label="Ana menü">
-<a href="/#hizmetler">Çözümler</a>
-<a href="/#projeler">Projeler</a>
-<a href="/#fiyatlar">Paketler</a>
-<a href="/#surec">Yol Haritası</a>
-<a href="/#sss">Sorular</a>
-<a href="/deneyim/otomasyon/">Otomasyon</a><a href="/seo/">SEO</a><a href="/rehber/">Rehber</a></nav>
-<a class="nav-cta" href="/#teklif">Projenizi Konuşalım <span>↗</span>
-</a>
-<button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menüyü aç">☰</button>
-</header>
-<main id="content"><header class="reader-intro"><p class="reader-category">HD MEDYA / BİLGİLENDİRME</p><h1>Çerezler ve tarayıcı verileri</h1></header><article class="reader-body"><h2>Mevcut uygulama</h2><p>Site kaynak kodunda reklam veya analiz çerezi yerleştiren bir takip sistemi bulunmamaktadır. Oyun seçimleri ve taşınabilir notlar sayfa belleğinde tutulur; sayfa yenilenince sıfırlanır. Kaynak kodu çerez, localStorage veya sessionStorage ile bu tercihleri kalıcı kaydetmez.</p><h2>3D model önbelleği</h2><p>Monogram geometrisi yeniden hesaplanmasın diye tarayıcınızın IndexedDB alanında işlevsel bir model önbelleği tutulabilir. Bu kayıt kullanıcı kimliği veya analiz verisi içermez. Tarayıcınızın site verilerini temizleyerek kaldırabilirsiniz; model yeniden oluşturulur.</p><h2>Dış kaynaklar ve bağlantılar</h2><p>Harici fontlar, WhatsApp ve bağlantı verdiğimiz platformlar kendi veri işleme süreçlerine sahiptir. Bu açıklama bu platformların çerez kullanmadığı anlamına gelmez. Yayına alınacak ortam ve gelecekte eklenecek analiz/reklam araçları ayrıca değerlendirilmelidir.</p></article>{{pricingSection}}</main>
-<footer>
-<a class="footer-brand brand" href="/#ust" aria-label="{{business.name}} ana sayfa"><img class="brand-mark" src="/assets/hd-monogram.svg" alt="HD" width="58" height="40"><span class="brand-name">{{business.wordmark}}<small>YARATICI WEB STÜDYOSU</small></span></a>
-<p>Eskişehir’de işletmelere ve kurumsal firmalara özel web tasarım.</p>
-<a href="{{links.phone}}">{{business.phoneDisplay}}</a>
-<a href="{{links.instagram}}" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
-<a href="/rehber/">Rehber</a>
-<a href="/#seo-analizi">Ücretsiz SEO Analizi</a>
-<a href="#content">Yukarı çık ↑</a>
-<small>© <span id="year">
-</span> {{business.name}}</small>
-<a class="footer-social-x" href="{{links.x}}" target="_blank" rel="noopener noreferrer">X ↗</a><a href="{{links.facebook}}" target="_blank" rel="noopener noreferrer">Facebook ↗</a><nav class="legal-links" aria-label="Yasal bilgiler"><a href="/yasal/gizlilik/">Gizlilik</a> · <a href="/yasal/cerezler/">Çerezler</a> · <a href="/yasal/kvkk/">KVKK</a></nav></footer>
-<a class="floating-contact" href="{{links.whatsapp}}" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a>
+{{sharedHeader}}
+<main id="content">
+<header class="reader-intro"><p class="reader-category">HD MEDYA / TARAYICI VERİLERİ</p><h1>{{ui.copy.c_c6031c0909e6}}</h1><p>Takip amaçlı çerezler kullanmadan, etkileşimleri cihazınızda çalıştırıyoruz.</p></header>
+<article class="reader-body">
+<h2>{{ui.copy.c_eab4f9442a6b}}</h2><p>HD Medya'nın bu sürümünde reklam çerezi, pazarlama pikseli veya ziyaretçi profili oluşturan analiz aracı bulunmaz. Site kodu çerez, localStorage veya sessionStorage kullanarak adınızı, iletişim bilgilerinizi ya da form içeriğinizi saklamaz. Bu nedenle reklam ve analiz tercihleri için bir çerez izin paneli gösterilmez.</p>
+<h2>{{ui.copy.c_72ffe6068001}}</h2><p>Monogram geometrisi, sonraki ziyaretlerde tekrar hesaplama yükünü azaltmak için tarayıcının IndexedDB alanındaki <strong>hd-medya-model</strong> veritabanında işlevsel olarak tutulabilir. Kayıt model geometrisi ve sürüm bilgisinden oluşur; kullanıcı kimliği, form içeriği ve pazarlama profili içermez. Kayıt, tarayıcının depolama yönetimine bağlı olarak site verileri temizlenene veya tarayıcı tarafından kaldırılana kadar kalabilir. Önbelleğe erişilemezse site bu kayıt olmadan çalışmayı sürdürür.</p>
+<h2>{{ui.copy.c_5761dc838e4f}}</h2><p>Taşınabilir notların yerleri, simülasyon seçimleri ve form gönderim aralığı kontrolü açık sayfanın belleğinde tutulur. Sayfayı kapattığınızda veya yenilediğinizde bu durumlar sıfırlanır. Tarayıcınız, daha hızlı tekrar açılış için HTML, görsel, font ve diğer site dosyalarını kendi HTTP önbelleğinde saklayabilir.</p>
+<h2>{{ui.copy.c_f3e68f4f2b63}}</h2><p>Tarayıcınızın gizlilik veya site ayarlarından <strong>hdmedyaeskisehir.com.tr</strong> için site verilerini silebilirsiniz. iPhone'da Safari'nin web sitesi verileri ayarından alan adını kaldırabilir; masaüstünde tarayıcınızın site bilgileri bölümünü kullanabilirsiniz. Temizleme sonrasında teknik dosyalar ve model yeniden yüklenebilir.</p>
+<h2>{{ui.copy.c_d7068bd22c93}}</h2><p>GitHub Pages barındırma hizmeti ve tıklayarak açtığınız WhatsApp veya sosyal medya hizmetlerinin teknik veri işlemleri kendi politikalarına tabidir. Font dosyaları bu site üzerinden sunulur. Buradaki açıklama, bağlantı verilen bütün platformların çerez kullanmadığı anlamına gelmez. Ayrıntılar için <a href="/yasal/gizlilik/">{{ui.copy.c_3899a0a4ef1b}}</a> inceleyebilirsiniz.</p>
+<p class="reader-source">Son güncelleme: 1 Kasım 2026.</p>
+</article></main>
+{{sharedFooter}}
+<a class="floating-contact" href="{{links.whatsapp}}" target="_blank" rel="noopener noreferrer">{{ui.copy.c_4206ac3f16ef}}</a>
 <script src="/site.js" defer>
 </script>
 <script src="/spontaneous.js" defer>

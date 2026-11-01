@@ -1,0 +1,606 @@
+[
+  {
+    "route": "/404.html",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/yerel-rehber/eskisehir-oto-detailing-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/yerel-rehber/eskisehir-mimarlik-ic-mimarlik-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/yerel-rehber/eskisehir-kurumsal-temizlik-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/yerel-rehber/eskisehir-emlak-ofisi-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/yerel-rehber/eskisehir-cnc-teknik-servis-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/yasal/kvkk/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/yasal/gizlilik/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/yasal/cerezler/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/seo/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/turkiye-avrupa-web-tasarim/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/seo/seo-on-analizi-kontrol-listesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 419,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/seo/yapay-zekada-onerilen-site/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/rehber/web-sitesi-yenileme-ne-zaman-gerekir/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/web-sitesi-yaptirmadan-once/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/web-sitesi-icerikleri-nasil-hazirlanir/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/otomasyon-teknik-servis-is-emri/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/otomasyon-nedir/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/otomasyon-siparis-stok-entegrasyonu/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/otomasyon-musteri-talep-takibi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/otomasyon-maliyet-ve-ilk-surum/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/otomasyon-excelden-is-takibine-gecis/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/eskisehir-restoran-kafe-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/hizmet-isletmeleri-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/eskisehir-guzellik-salonu-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/eskisehir-dugun-salonu-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/eskisehir-butik-otel-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/eskisehir-oto-servis-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/rehber/cok-dilli-web-sitesi-planlama/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/ornekler/veteriner/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/ornekler/petshop/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/ornekler/muzisyen/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/ornekler/top-cleaning/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/ornekler/durukan-insaat/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/ornekler/ertorun-insaat/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/ornekler/doktor/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/ornekler/durukan-emlak/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/hizmetler/web-sitesi-yenileme/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/hizmetler/size-ozel-web-tasarim/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/hizmetler/ozel-web-yazilimi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/hizmetler/kurumsal-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/hizmetler/isletme-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/ornekler/dis-klinigi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": []
+  },
+  {
+    "route": "/hizmetler/e-ticaret-web-sitesi/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 390,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/deneyim/otomasyon/",
+    "status": 200,
+    "width": 390,
+    "scrollWidth": 390,
+    "bodyWidth": 500,
+    "overflow": false,
+    "errors": [],
+    "contrasts": [
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      },
+      {
+        "background": "rgba(0, 0, 0, 0)",
+        "text": "rgb(245, 255, 239)",
+        "title": "rgb(245, 255, 239)"
+      }
+    ]
+  },
+  {
+    "route": "/",
+    "desktop": true,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "overflow": false
+  },
+  {
+    "route": "/rehber/",
+    "desktop": true,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "overflow": false
+  },
+  {
+    "route": "/deneyim/otomasyon/",
+    "desktop": true,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "overflow": false
+  },
+  {
+    "route": "/seo/",
+    "desktop": true,
+    "width": 1440,
+    "scrollWidth": 1440,
+    "overflow": false
+  }
+]
