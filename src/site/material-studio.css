@@ -1,0 +1,13 @@
+/* The brand is cut into the shade material; no image sticker or white plate. */
+.street-lamp .lamp-engraving{pointer-events:none;opacity:.96}
+.street-lamp .lamp-engraving .engrave-shadow{opacity:.78}
+.street-lamp .lamp-engraving .engrave-catch{opacity:.65}
+.street-lamp .lamp-engraving .engrave-cut{opacity:.92}
+.street-lamp:hover .lamp-engraving .engrave-catch,
+.street-lamp:focus-visible .lamp-engraving .engrave-catch{opacity:.86}
+
+/* Keep the finished matching poster until the first textured frame is ready. */
+.hero-stage.live3d .hero-art{opacity:1;visibility:visible;transition:opacity .24s ease,visibility 0s}
+.hero-stage.live3d.ready .hero-art{opacity:0!important;visibility:hidden;transition:opacity .24s ease,visibility 0s .24s}
+body>#logo3d.hd-scene-surface{transition:opacity .24s ease}
+@media(prefers-reduced-motion:reduce){.hero-stage.live3d .hero-art,.hero-stage.live3d.ready .hero-art,body>#logo3d.hd-scene-surface{transition:none!important}}

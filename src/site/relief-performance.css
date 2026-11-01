@@ -1,0 +1,24 @@
+/* One compositor transition. Light stays on the masonry, never on the copy. */
+.wall-scene .wall-rotor,.wall-scene.turning.flipped .wall-rotor,.wall-scene.turning:not(.flipped) .wall-rotor{animation:none!important;transition-property:transform!important;transition-duration:560ms!important;transition-timing-function:cubic-bezier(.28,.04,.2,1)!important;will-change:auto}
+.wall-scene.turning .wall-rotor{will-change:transform}
+.wall-scene .wall-front,.wall-scene .wall-back{transform-style:flat!important;contain:paint;will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden;box-shadow:none!important}
+.wall-scene.turning .wall-front,.wall-scene.turning .wall-back{filter:none!important}
+.wall-scene.turning .wall-surface-light{visibility:hidden;transition:none!important}
+body:has(.wall-scene.turning) .nav-shell{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:#fffffff2!important}
+.wall-scene .wall-graffiti,.wall-scene .wall-graffiti span,.wall-scene .wall-graffiti span:first-child,.wall-scene .wall-graffiti span:nth-child(2),.wall-scene .wall-graffiti span:nth-child(3){opacity:1!important;filter:none!important;mix-blend-mode:normal!important;text-shadow:1px 2px 0 #070b08!important}
+.wall-scene .wall-graffiti span:first-child{color:#ff7952!important}
+.wall-scene .wall-graffiti span:nth-child(2){color:#fff9e5!important}
+.wall-scene .wall-graffiti span:nth-child(3){color:#d5ff3f!important}
+.wall-scene .wall-graffiti-back span:first-child,.wall-scene .wall-graffiti-back span:nth-child(3){color:#fff9e5!important}
+.wall-scene .wall-graffiti-back span:nth-child(2){color:#d5ff3f!important}
+.wall-scene .wall-footer{opacity:1!important;filter:none!important;mix-blend-mode:normal!important;isolation:isolate}
+.wall-scene .wall-footer::before{content:'';position:absolute;inset:-55px -60px;z-index:-1;background:radial-gradient(ellipse at 40% 50%,#030b08e8,#030b0899 45%,#030b0800 74%);pointer-events:none}
+.wall-scene .wall-footer p{color:#fff!important;opacity:1!important;font-size:17px!important;line-height:1.7!important;font-weight:600;text-shadow:0 1px 2px #000}
+.wall-scene .wall-footer p strong{color:#fff;font-weight:600}
+.wall-scene .wall-footer p>span{color:#d5ff3f;font-weight:600}
+.wall-scene .wall-footer .wall-button{color:#fff!important;border-color:#e8f8cb!important;background:#0b170deb;font-size:13px;font-weight:600}
+.wall-scene .wall-footer .wall-button:hover{color:#20291a!important;border-color:#d5ff3f!important;background:#d5ff3f}
+.wall-scene .wall-return{color:#f3ffdf!important;border-color:#e1f1c5!important;opacity:1;font-size:13px}
+.wall-scene .wall-wordmark{color:#fff;opacity:1}
+@media(max-width:700px){.wall-scene .wall-footer p{font-size:16px!important;line-height:1.65!important}.wall-front .wall-footer,.wall-back .wall-footer{gap:15px}}
+@media(prefers-reduced-motion:reduce){.wall-scene .wall-rotor,.wall-scene.turning.flipped .wall-rotor,.wall-scene.turning:not(.flipped) .wall-rotor{transition:none!important;will-change:auto}}

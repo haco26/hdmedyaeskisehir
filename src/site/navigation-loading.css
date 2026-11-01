@@ -1,0 +1,55 @@
+/* Progressive, truthful loading: each phase follows the actual model state. */
+.utility-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+#heroStage[data-load-phase] .hero-art img{transition:filter .65s ease,opacity .65s ease}
+#heroStage[data-load-phase='waiting'] .hero-art img,#heroStage[data-load-phase='poster'] .hero-art img{filter:grayscale(1) contrast(.58) brightness(1.5);opacity:.52}
+#heroStage[data-load-phase='surface'] .hero-art img{filter:grayscale(.65) contrast(.8) brightness(1.2);opacity:.8}
+#heroStage[data-load-phase='complete'] .hero-art img,#heroStage[data-load-phase='fallback'] .hero-art img{filter:none;opacity:1}
+#heroStage[data-load-phase]:not([data-load-phase='complete']):not([data-load-phase='fallback']) .hero-art::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(105deg,transparent 30%,#fff9 47%,transparent 64%);background-size:250% 100%;animation:artwork-wash 2.3s ease-in-out infinite;mix-blend-mode:screen}
+@keyframes artwork-wash{0%{background-position:150% 0}100%{background-position:-80% 0}}
+#heroStage.live3d.ready .hero-art{transition:opacity .65s ease,visibility 0s .65s!important}
+body>#logo3d.hd-scene-surface{transition:opacity .65s ease!important}
+
+/* A compact, screen-following ink pointer and contact control. */
+.utility-dock{position:fixed;z-index:11000;right:22px;bottom:max(20px,env(safe-area-inset-bottom));display:flex;align-items:center;gap:4px;padding:4px;border:1px solid #dce3d1;border-radius:32px;background:#fffffff0;backdrop-filter:blur(16px);box-shadow:0 7px 26px #1b241514;isolation:isolate}
+.utility-dock::after{content:'';position:absolute;left:15px;right:15px;bottom:0;height:2px;transform:scaleX(var(--page-progress,0));transform-origin:left;background:#ff5a36;pointer-events:none}
+.utility-scroll{display:grid;place-items:center;width:44px;height:44px;min-width:44px;min-height:44px;border:0;border-radius:50%;background:transparent;color:#253020;cursor:pointer;transition:background .18s,transform .18s}
+.utility-scroll svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;transform:rotate(-5deg)}
+.utility-down svg{transform:rotate(175deg)}
+.utility-scroll:hover{background:#d1ff46;transform:translateY(-2px)}
+.utility-down:hover{transform:translateY(2px)}
+.utility-scroll:disabled{opacity:.28;cursor:default;transform:none;background:transparent}
+.utility-dock .floating-contact{position:static!important;inset:auto!important;display:flex!important;align-items:center;justify-content:center;gap:8px;height:44px;min-height:44px;min-width:44px;margin:0!important;padding:0 16px!important;border:0!important;border-radius:24px!important;background:#20251c!important;color:#fff!important;box-shadow:none!important;font-size:12px;line-height:1;text-decoration:none;transform:none!important;transition:background .2s!important}
+.utility-dock .floating-contact::before,.utility-dock .floating-contact::after{content:none!important}
+.utility-contact-icon{width:23px;height:23px;flex:none;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.utility-dock .floating-contact:hover{background:#3b4f29!important}
+.utility-dock button:focus-visible,.utility-dock a:focus-visible{outline:3px solid #fa6842;outline-offset:3px}
+@media(max-width:850px){
+ .nav-shell{transition:translate .28s cubic-bezier(.2,.8,.2,1),background .2s!important}
+ .nav-shell.nav-is-hidden{translate:0 calc(-100% - 35px);pointer-events:none}
+
+ .utility-dock{right:12px;bottom:max(12px,env(safe-area-inset-bottom));padding:3px;gap:0}
+ .utility-dock .floating-contact{padding:0 10px!important}
+ .utility-contact-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+ .utility-dock .floating-contact:focus-visible .utility-contact-label{position:static;width:auto;height:auto;clip-path:none}
+}
+@media(prefers-reduced-motion:reduce){
+ #heroStage[data-load-phase] .hero-art img,#heroStage.live3d.ready .hero-art,body>#logo3d.hd-scene-surface,.nav-shell,.utility-scroll{transition:none!important;animation:none!important}
+ #heroStage[data-load-phase] .hero-art::after{animation:none!important;background:none!important}
+ .utility-scroll:hover{transform:none}
+}
+
+/* Visible loading cue, with a light pass clipped to the actual silhouette. */
+#heroStage[data-load-phase]:not([data-load-phase='complete']):not([data-load-phase='fallback']) .hero-art::after{
+ z-index:3;opacity:1;mix-blend-mode:normal;
+ background:linear-gradient(110deg,transparent 35%,#e0ff8a99 43%,#ffffffed 49%,#e0ff8a99 55%,transparent 63%);
+ background-size:280% 100%;animation:monogram-light-pass 1.8s linear infinite;
+ -webkit-mask:url('assets/hero-sculpture.webp?v=machined-4-final') center/contain no-repeat;
+ mask:url('assets/hero-sculpture.webp?v=machined-4-final') center/contain no-repeat;
+}
+@keyframes monogram-light-pass{from{background-position:160% 0}to{background-position:-60% 0}}
+.hero-load-status{position:absolute;left:50%;bottom:83px;z-index:12;transform:translateX(-50%);display:flex;align-items:center;gap:9px;padding:9px 13px;color:#4b5841;background:#ffffffe6;border:1px solid #dfe6d5;border-radius:24px;font-size:11px;letter-spacing:.025em;white-space:nowrap;pointer-events:none;transition:opacity .25s,visibility .25s}
+.hero-load-status::before{content:'';width:7px;height:7px;border-radius:50%;background:#9fbd4d;box-shadow:0 0 0 4px #c9e88c33;animation:loading-beacon 1.3s ease-in-out infinite}
+@keyframes loading-beacon{50%{box-shadow:0 0 0 7px #c9e88c11;background:#65872a}}
+#heroStage[data-load-phase='complete'] .hero-load-status,#heroStage[data-load-phase='fallback'] .hero-load-status{opacity:0;visibility:hidden}
+@media(max-width:560px){.hero-load-status{bottom:68px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){#heroStage[data-load-phase] .hero-art::after,.hero-load-status::before{animation:none!important}.hero-load-status{transition:none}}

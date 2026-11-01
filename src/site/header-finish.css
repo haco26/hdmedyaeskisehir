@@ -1,0 +1,13 @@
+/* A quiet full-brand paint mark, with one restrained magnification. */
+.nav-shell::after{content:none!important;display:none!important}
+.nav-shell .brand{border-right:0;position:relative;isolation:isolate;transition:transform .24s ease}
+.nav-shell .brand::before{content:'';position:absolute;left:-9px;right:5px;top:-6px;bottom:-5px;width:auto;height:auto;z-index:-1;opacity:0;filter:none;clip-path:none;border-radius:0;background-color:transparent;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 320 90' preserveAspectRatio='none'%3E%3Cpath d='M4 27L38 14 35 18 115 12 166 6 232 12 312 5 302 21 318 20 307 66 276 70 280 77 197 74 139 84 72 77 12 83 17 62 3 65Z' fill='%23d1ff46'/%3E%3Cpath d='M22 84L80 80M266 5L293 2M10 16L17 14' stroke='%23a7c94a' stroke-width='2'/%3E%3C/svg%3E");background-size:100% 100%;background-repeat:no-repeat;transform:rotate(-2deg) scaleX(.96);transition:opacity .24s,transform .24s}
+.nav-shell .brand:hover,.nav-shell .brand:focus-visible{transform:scale(1.025)}
+.nav-shell .brand:hover::before,.nav-shell .brand:focus-visible::before{opacity:.25;transform:rotate(-2deg) scaleX(1)}
+.nav-shell .brand-mark,.nav-shell .brand-name{transform:none!important;filter:none!important;transition:none;color:var(--ink)}
+.nav-shell .nav-links a{transition:transform .22s,color .22s;box-shadow:none!important}
+.nav-shell .nav-links a:hover,.nav-shell .nav-links a:focus-visible{transform:scale(1.04);box-shadow:none!important}
+.nav-shell .nav-cta:hover,.nav-shell .nav-cta:focus-visible{transform:scale(1.025);box-shadow:none!important}
+.nav-shell .nav-cta span,.nav-shell .nav-cta:hover span{transform:none!important}
+@media(max-width:560px){.nav-shell .brand::before{left:-5px;right:-5px;top:-4px;bottom:-3px}}
+@media(prefers-reduced-motion:reduce){.nav-shell .brand,.nav-shell .brand::before,.nav-shell .nav-links a,.nav-shell .nav-cta{transition:none!important;transform:none!important}}

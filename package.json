@@ -1,0 +1,17 @@
+{
+  "name": "hd-medya-static-site",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node tools/build-static.mjs",
+    "check": "node tools/build-static.mjs --check",
+    "test": "node --test tools/*.test.mjs",
+    "preview": "node tools/preview-static.mjs",
+    "makale:yeni": "node tools/new-article.mjs",
+    "audit:site": "node tools/site-audit.mjs",
+    "audit:security": "node tools/security-audit.mjs"
+  }
+}

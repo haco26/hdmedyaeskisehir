@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,follow">
+<title>Deniz Akın — Müzisyen Tasarım Örneği | {{business.name}}</title>
+<meta name="description" content="Müzisyen için poster estetiği, güçlü tipografi ve deneysel bir albüm/sahne sunumu.">
+<link rel="canonical" href="{{site.origin}}/ornekler/muzisyen/">
+<link rel="stylesheet" href="/demos.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="/site-data.js" defer>
+</script>
+<script type="application/ld+json">{{organizationSchema}}</script>
+<link rel="stylesheet" href="/latest-revision.css">
+</head>
+<body class="demo demo-muzisyen">
+<div class="demo-ribbon">
+<a href="/#projeler">← {{business.name}}</a>
+<span>KURGUSAL TASARIM ÖRNEĞİ</span>
+<a href="{{links.whatsapp}}?text=Merhaba%20{{business.nameEncoded}}%2C%20Deniz%20Ak%C4%B1n%20%28M%C3%BCzisyen%29%20%C3%B6rnek%20tasar%C4%B1m%C4%B1n%C4%B1%20kendi%20markama%20uyarlamak%20istiyorum." target="_blank" rel="noopener noreferrer">Markama uyarlayalım ↗</a>
+</div>
+<main>
+<header class="demo-nav experience-nav">
+<a class="demo-brand" href="#baslangic">Deniz Akın</a>
+<nav aria-label="Örnek site menüsü">
+<a href="#detay">Keşfet</a>
+<a href="#deneyim">Deneyim alanı</a>
+<a href="#iletisim">İletişim</a>
+</nav>
+</header>
+<section class="music-hero" id="baslangic">
+<img class="music-photo" src="/assets/concepts/musician.webp" alt="Kurgusal sanatçı için üretilmiş sahne görseli" width="1672" height="941" fetchpriority="high">
+<div class="music-copy">
+<p class="kicker">SESİN İZİNDE. KENDİ YOLUNDA.</p>
+<h1>DENİZ<BR>AKIN</h1>
+<p class="music-subtitle">Bir ritimden fazlası.</p>
+<a class="demo-button" href="#detay">Dijital sahneyi keşfet ↗</a>
+</div>
+<span class="music-side">BAĞIMSIZ BİR DİJİTAL SAHNE</span>
+</section>
+<section class="music-lab" id="detay">
+<div>
+<p class="kicker">SESİ GÖRMENİN BİR YOLU</p>
+<h2>Kendi ritminde.</h2>
+<p>Müziği, sahne dünyasını ve sanatçı hikâyesini aynı enerjide buluşturan özgün bir dijital sahne.</p>
+<button type="button" id="rhythmToggle" aria-pressed="false">Görsel ritmi başlat</button>
+<small>Yalnız görsel animasyon. Ses çalınmaz.</small>
+</div>
+<div class="visual-rhythm" aria-hidden="true">
+<i style="--i:0">
+</i>
+<i style="--i:1">
+</i>
+<i style="--i:2">
+</i>
+<i style="--i:3">
+</i>
+<i style="--i:4">
+</i>
+<i style="--i:5">
+</i>
+<i style="--i:6">
+</i>
+<i style="--i:7">
+</i>
+<i style="--i:8">
+</i>
+<i style="--i:9">
+</i>
+<i style="--i:10">
+</i>
+<i style="--i:11">
+</i>
+<i style="--i:12">
+</i>
+<i style="--i:13">
+</i>
+<i style="--i:14">
+</i>
+<i style="--i:15">
+</i>
+<i style="--i:16">
+</i>
+<i style="--i:17">
+</i>
+<i style="--i:18">
+</i>
+<i style="--i:19">
+</i>
+<i style="--i:20">
+</i>
+<i style="--i:21">
+</i>
+<i style="--i:22">
+</i>
+<i style="--i:23">
+</i>
+</div>
+</section>
+<section class="sector-experience" id="deneyim"><div class="experience-heading"><p class="kicker">BİR VİTRİNDEN DAHA FAZLASI</p><h2>Deneyin. Size nasıl uyarlanacağını düşünün.</h2><p>Beş küçük araç, sektörünüze özel bir deneyim. Bu kurgusal önizlemede gerçek randevu, ödeme veya sipariş alınmaz; bilgiler bir kuruma gönderilmez.</p></div><div class="experience-grid"><article class="experience-tool" data-feature="setlist"><h3>Kendi set listeniz</h3><form data-demo-action="setlist"><label>Parça seçin<select name="track"><option>Geceye Doğru</option><option>Kıyı</option><option>Yeni Bir Ses</option><option>Yol</option></select></label><button type="submit">Set listeme ekle</button><output aria-live="polite">Seçimlerinizi yaparak deneyin.</output></form></article><article class="experience-tool" data-feature="metronome"><h3>Ritmi siz belirleyin</h3><form data-demo-action="metronome"><label>Tempo (40–180 BPM)<input name="bpm" type="number" value="96" required></label><button type="submit">Ritmi başlat / durdur</button><output aria-live="polite">Seçimlerinizi yaparak deneyin.</output></form></article><article class="experience-tool" data-feature="calendar"><h3>Sahne gününü kaydet</h3><form data-demo-action="calendar"><label>Konser notu<input name="title" type="text" value="Deniz Akın — örnek sahne" required></label><label>Örnek gün<input name="date" type="date" value="" required></label><label>Saat<input name="time" type="time" value="20:00" required></label><button type="submit">Takvim dosyasını indir</button><output aria-live="polite">Seçimlerinizi yaparak deneyin.</output></form></article><article class="experience-tool" data-feature="booking"><h3>Etkinlik brifi</h3><form data-demo-action="booking"><label>Etkinlik<select name="event"><option>Akustik buluşma</option><option>Festival</option><option>Özel etkinlik</option></select></label><label>Örnek tarih<input name="date" type="date" value="" required></label><label>Tahmini izleyici<input name="audience" type="number" value="100" required></label><button type="submit">Brifi hazırla</button><output aria-live="polite">Seçimlerinizi yaparak deneyin.</output></form></article><article class="experience-tool" data-feature="theme"><h3>Sahnenin atmosferi</h3><form data-demo-action="theme"><label>Işık rengi<select name="theme"><option>Koral</option><option>Elektrik mavisi</option><option>Asit sarısı</option></select></label><button type="submit">Sahneyi değiştir</button><output aria-live="polite">Seçimlerinizi yaparak deneyin.</output></form></article></div><p class="experience-disclaimer">Hesaplamalar yalnız arayüz örneğidir. Ödeme koşulu, sağlık önerisi veya beslenme miktarı belirlemez. Hatırlatıcı yalnız açık sekmede çalışır; cihaz bildirimi göndermez.</p></section>
+<section id="yaklasim" class="demo-approach">
+<span>TASARIMIN ARKASINDAKİ FİKİR</span>
+<h2>Sosyal medya profilinizin ötesinde, tamamen size ait bir sahne kurun.</h2>
+<p>Müzisyen için poster estetiği, güçlü tipografi ve deneysel bir albüm/sahne sunumu.</p>
+</section>
+<section class="demo-contact" id="iletisim">
+<p>{{business.name}} / SİZİN MARKANIZ İÇİN</p>
+<h2>Bu hikâyenin<br>başrolü sizin işiniz olsun.</h2>
+<a href="{{links.whatsapp}}?text=Merhaba%20{{business.nameEncoded}}%2C%20Deniz%20Ak%C4%B1n%20%28M%C3%BCzisyen%29%20%C3%B6rnek%20tasar%C4%B1m%C4%B1n%C4%B1%20kendi%20markama%20uyarlamak%20istiyorum." target="_blank" rel="noopener noreferrer">Bu tasarımı kendi siteme uyarlayalım ↗</a>
+<small>Bu sayfa bir kurgusal tasarım örneğidir; gerçek randevu, sipariş veya başvuru alınmaz.</small>
+</section>
+<footer class="demo-footer"><a class="footer-brand brand" href="/#ust" aria-label="{{business.name}} ana sayfa"><img class="brand-mark" src="/assets/hd-monogram.svg" alt="HD" width="58" height="40"><span class="brand-name">{{business.wordmark}}<small>YARATICI WEB STÜDYOSU</small></span></a>
+<a href="/#tasarim-ornekleri">Diğer sektör örnekleri</a>
+<a href="/#teklif">{{business.name}} ile görüşelim</a>
+</footer>
+</main>
+<script src="/demos.js" defer>
+</script>
+<script src="/latest-revision.js" defer></script>
+</body>
+</html>

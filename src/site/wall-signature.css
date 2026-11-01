@@ -1,0 +1,114 @@
+/* Solid spray paint with a shallow grain; the brick wall remains the substrate. */
+.wall-scene .wall-graffiti {
+  top: 16%;
+  left: 5%;
+  width: 60%;
+  font-size: clamp(104px, 11.2vw, 157px);
+  line-height: .8;
+  letter-spacing: -.04em;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+  filter: none !important;
+  isolation: isolate;
+  z-index: 2;
+  transform: rotate(-7deg) skewX(-5deg);
+}
+.wall-scene .wall-graffiti span,
+.wall-scene .wall-graffiti span:first-child,
+.wall-scene .wall-graffiti span:nth-child(2),
+.wall-scene .wall-graffiti span:nth-child(3) {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  padding: 0 12px 10px 0;
+  background: none !important;
+  background-clip: border-box !important;
+  -webkit-background-clip: border-box !important;
+  -webkit-text-fill-color: currentColor !important;
+  -webkit-text-stroke: .65px currentColor !important;
+  paint-order: stroke fill;
+  text-shadow: 1px 1.5px 0 #080d0a66 !important;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+  filter: url('assets/paint-surface.svg#paintSurface') !important;
+}
+.wall-scene .wall-graffiti span:first-child { color: #ff744f; }
+.wall-scene .wall-graffiti span:nth-child(2) { color: #fff0d2; }
+.wall-scene .wall-graffiti span:nth-child(3) { color: #d3ff56; }
+.wall-scene .wall-graffiti-back {
+  top: 12.5%;
+  font-size: clamp(100px, 10.6vw, 148px);
+  line-height: .79;
+}
+.wall-scene .wall-graffiti-back span:first-child { color: #fff0d2; }
+.wall-scene .wall-graffiti-back span:nth-child(2) { color: #d5ff57; }
+.wall-scene .wall-graffiti-back span:nth-child(3) { color: #fff0d2; }
+
+/* The outline SVG is lettering, with actual HD Medya text retained in the markup. */
+.wall-scene .wall-graffiti .spray-signature {
+  position: relative;
+  display: block;
+  width: clamp(255px, 28vw, 365px);
+  height: clamp(70px, 7.5vw, 97px);
+  margin: -5px 0 0 5%;
+  padding: 0;
+  overflow: visible;
+  color: transparent !important;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: 0 !important;
+  background: url('assets/hd-medya-signature.svg') center / contain no-repeat !important;
+  font-family: 'Segoe Script', 'Brush Script MT', HDGraffiti, cursive;
+  font-size: 46px;
+  line-height: 1;
+  letter-spacing: -.09em;
+  text-shadow: none !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+  transform: rotate(-3deg) skewX(5deg);
+  white-space: nowrap;
+}
+.wall-scene .spray-signature::before,
+.wall-scene .spray-signature::after { content: none !important; }
+.wall-scene .spray-signature img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.wall-scene .wall-wordmark { opacity: .88; }
+.wall-scene .wall-light { opacity: .66; }
+.wall-scene[data-lamp='off'] .wall-light { opacity: 0; }
+.street-lamp .lamp-brand-badge { pointer-events: none; }
+
+@media (max-width: 930px) and (min-width: 701px) {
+  .wall-scene .wall-graffiti { font-size: clamp(90px, 11.4vw, 124px); }
+  .wall-scene .wall-graffiti-back { top: 13%; font-size: clamp(88px, 10.8vw, 118px); }
+  .wall-scene .wall-graffiti .spray-signature { width: 270px; height: 73px; }
+}
+@media (max-width: 700px) {
+  .wall-scene .wall-graffiti {
+    top: 16%;
+    left: 7%;
+    width: 88%;
+    font-size: clamp(82px, 20.5vw, 111px);
+    line-height: .79;
+    transform: rotate(-7deg) skewX(-4deg);
+  }
+  .wall-scene .wall-graffiti span,
+  .wall-scene .wall-graffiti span:first-child,
+  .wall-scene .wall-graffiti span:nth-child(2),
+  .wall-scene .wall-graffiti span:nth-child(3) { padding-bottom: 8px; -webkit-text-stroke-width: .5px !important; }
+  .wall-scene .wall-graffiti-back { top: 14%; font-size: clamp(80px, 20.2vw, 107px); }
+  .wall-scene .wall-graffiti .spray-signature {
+    width: min(282px, 85%);
+    height: 76px;
+    margin: -4px 0 0 3%;
+    font-size: 38px;
+  }
+}
+@media (max-width: 374px) {
+  .wall-scene .wall-graffiti { font-size: 75px; left: 6%; }
+  .wall-scene .wall-graffiti-back { font-size: 73px; }
+  .wall-scene .wall-graffiti .spray-signature { width: 245px; height: 66px; }
+}

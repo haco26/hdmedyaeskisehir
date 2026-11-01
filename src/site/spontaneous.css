@@ -1,0 +1,75 @@
+/* A shared studio language; each arrival chooses a different short gesture. */
+:root{
+  --sp-brush-lime:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 24' preserveAspectRatio='none'%3E%3Cpath d='M2 10L32 7 25 4 91 7 137 3 209 6 264 2 333 5 418 0 411 13 377 12 382 17 298 15 237 20 166 16 107 23 51 18 0 21Z' fill='%23d1ff46'/%3E%3Cpath d='M10 22L109 19 101 23 248 21 379 19' stroke='%23accc4a' stroke-width='1'/%3E%3C/svg%3E");
+  --sp-brush-coral:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 24' preserveAspectRatio='none'%3E%3Cpath d='M1 11L37 6 31 3 107 6 145 2 203 5 275 1 341 4 419 0 410 14 370 11 375 18 297 15 241 21 168 16 104 23 46 17 0 20Z' fill='%23ff916d'/%3E%3Cpath d='M22 22L131 20 247 22 395 18' stroke='%23ff5a36' stroke-width='1'/%3E%3C/svg%3E");
+  --sp-brush-warm:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 24' preserveAspectRatio='none'%3E%3Cpath d='M3 9L60 4 78 6 148 0 192 5 282 1 339 4 419 1 411 14 367 11 375 18 286 16 231 22 159 16 95 23 52 17 0 21Z' fill='%23f0d497'/%3E%3C/svg%3E");
+}
+
+/* The right column ends deliberately at the section edge. */
+@media(min-width:801px){
+  .section-head>p,.services .section-head>p{justify-self:end;text-align:right;margin:35px 0 0 auto;max-width:480px;text-wrap:pretty}
+  .portfolio .section-head>p,.prices .section-head>p{padding-right:0;align-self:start}
+}
+@media(max-width:800px){.section-head>p,.services .section-head>p{text-align:left;margin-left:0}}
+
+.sp-reactive{--sp-tone:#ff5a36;--sp-soft:#ff5a361c;--sp-line:#d1ff46;--sp-turn:-.35deg;--sp-brush:var(--sp-brush-lime)}
+.sp-reactive[data-reaction='ink']{--sp-tone:#a23e27;--sp-soft:#ff5a361c;--sp-line:#ff8d6a;--sp-brush:var(--sp-brush-coral)}
+.sp-reactive[data-reaction='glint']{--sp-tone:#819747;--sp-soft:#d1ff4626;--sp-line:#d1ff46;--sp-brush:var(--sp-brush-lime)}
+.sp-reactive[data-reaction='lift']{--sp-tone:#617944;--sp-soft:#adc5731c;--sp-line:#c1de70;--sp-turn:.3deg;--sp-brush:var(--sp-brush-lime)}
+.sp-reactive[data-reaction='sketch']{--sp-tone:#b26b3f;--sp-soft:#eac89226;--sp-line:#e8b884;--sp-brush:var(--sp-brush-warm)}
+.sp-reactive[data-reaction='echo']{--sp-tone:#b54a2e;--sp-soft:#ff735d12;--sp-line:#ff9677;--sp-turn:.35deg;--sp-brush:var(--sp-brush-coral)}
+.sp-reactive[data-react-kind='text']{transition:translate .3s ease,text-shadow .3s ease,color .3s ease}
+.sp-reactive[data-react-kind='text'].sp-active[data-reaction='ink']{text-shadow:1.5px 1.5px 0 #ff5a3628}
+.sp-reactive[data-react-kind='text'].sp-active[data-reaction='glint']{text-shadow:0 3px 18px #b1ca7150;color:#455734}
+.sp-reactive[data-react-kind='text'].sp-active[data-reaction='lift']{translate:0 -2px;text-shadow:0 5px 12px #34432312}
+.sp-reactive[data-react-kind='text'].sp-active[data-reaction='sketch']{text-shadow:-1px 1px 0 #edc6855c}
+.sp-reactive[data-react-kind='text'].sp-active[data-reaction='echo']{text-shadow:-1px 0 #ff5a3638,1px .5px #a6bf6c55}
+
+/* Independent transform properties preserve the cards' existing 3D transforms. */
+.sp-reactive[data-react-kind='surface']{transition:translate .32s ease,rotate .32s ease,transform .24s ease-out,box-shadow .32s ease,border-color .25s ease,filter .3s ease}
+.sp-reactive[data-react-kind='surface'].sp-active[data-reaction='ink']{box-shadow:inset 3px 0 0 var(--sp-tone),0 12px 25px #34452310}
+.sp-reactive[data-react-kind='surface'].sp-active[data-reaction='glint']{box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 #e1edcb,0 0 30px var(--sp-soft);border-color:#c8d6b0}
+.sp-reactive[data-react-kind='surface'].sp-active[data-reaction='lift']{translate:0 -4px;box-shadow:0 16px 30px #3d4a2720}
+.sp-reactive[data-react-kind='surface'].sp-active[data-reaction='sketch']{rotate:var(--sp-turn);box-shadow:3px 4px 0 var(--sp-soft),inset 0 -2px 0 var(--sp-line)}
+.sp-reactive[data-react-kind='surface'].sp-active[data-reaction='echo']{translate:0 -2px;box-shadow:-3px 3px 0 #ff5a361b,3px -2px 0 #d1ff4620,0 8px 20px #3443220b}
+.project-item.sp-active .project-shot,.project-item.sp-active .project-preview,.sector-card.sp-active .sector-preview{transition:translate .3s,rotate .3s,box-shadow .3s;box-shadow:0 16px 30px #26341c18,inset 0 -3px 0 var(--sp-line)}
+.project-item.sp-active[data-reaction='lift'] .project-shot,.project-item.sp-active[data-reaction='lift'] .project-preview,.sector-card.sp-active[data-reaction='lift'] .sector-preview{translate:0 -4px}
+.project-item.sp-active[data-reaction='sketch'] .project-shot,.sector-card.sp-active[data-reaction='sketch'] .sector-preview{rotate:var(--sp-turn)}
+.project-item.sp-active[data-reaction='echo'] .project-shot,.sector-card.sp-active[data-reaction='echo'] .sector-preview{box-shadow:5px 6px 0 #ff5a3619,-2px -2px 0 #d1ff4629}
+
+/* Glass packages: broad reflections, a thin edge and clear contrast. */
+.prices .price-grid{background:radial-gradient(ellipse at 35% 0,#fff1df88,transparent 48%),radial-gradient(ellipse at 90% 100%,#e6f4bd70,transparent 50%),#fafbf799;border:1px solid #e5eadc;border-radius:30px;padding:16px;gap:18px;isolation:isolate}
+.prices .price-card{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(145deg,#ffffffdc,#f8f8f2b5 58%,#f0f1e6b8);border:1px solid #fff;border-radius:16px 30px 16px 16px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:inset 1px 1px 0 #fff,inset -1px -1px 0 #dbe1d1,0 10px 24px #3f472510}
+.prices .price-card::before{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at var(--sp-x,20%) var(--sp-y,0%),#fff9,transparent 46%),linear-gradient(120deg,transparent 28%,#fff7 29%,transparent 38%,transparent 67%,#fff5 68%,transparent 73%);opacity:.8}
+.prices .price-card:nth-child(1){background-color:#fff0e5}.prices .price-card:nth-child(3){background-color:#f1f8dc}
+.prices .price-card.featured{color:#f5f9ed;background:linear-gradient(145deg,#536149e8,#243020ed 62%,#263820f2);border-color:#9fb778;box-shadow:inset 1px 1px 0 #d8e6bc70,inset -1px -1px 0 #adbc8155,0 12px 25px #24321a20}
+.prices .price-card.featured::before{background:radial-gradient(circle at var(--sp-x,25%) var(--sp-y,0%),#d3e7b92b,transparent 48%),linear-gradient(120deg,transparent 25%,#ffffff14 26%,transparent 38%,transparent 65%,#d2e5b41a 66%,transparent 75%)}
+.prices .featured .price-top,.prices .featured>p,.prices .featured li{color:#dbe6cf}.prices .featured .amount,.prices .featured h3{color:#fbfff3}.prices .featured .popular{background:#d1ff46;color:#28361c}.prices .featured .price-link{background:#d1ff46;color:#24321b;border-color:#d1ff46}.prices .price-card .price-link{position:relative;z-index:1}
+
+/* Jagged paint follows every line; it is not a standard text-decoration. */
+.guide-card h3,.guide-card:hover h3,.guide-card:focus-visible h3{text-decoration:none!important}
+.guide-card .sp-brush-text{display:inline;padding-bottom:.11em;background-image:var(--sp-brush);background-size:0 .27em;background-repeat:no-repeat;background-position:0 96%;-webkit-box-decoration-break:clone;box-decoration-break:clone;transition:background-size .3s cubic-bezier(.15,.7,.3,1)}
+.guide-card.sp-active .sp-brush-text,.guide-card:hover .sp-brush-text,.guide-card:focus-visible .sp-brush-text{background-size:100% .27em}
+.guide-card.sp-active[data-reaction='sketch'] .sp-brush-text{background-position:0 100%;background-size:100% .3em}
+.guide-card.sp-active[data-reaction='echo'] .sp-brush-text{background-size:100% .22em}
+.guide-card.sp-active .read-guide{color:var(--sp-tone)}
+
+.sp-reactive[data-react-kind='link']{transition:translate .25s,box-shadow .25s,text-shadow .25s,color .25s}
+.sp-reactive[data-react-kind='link'].sp-active[data-reaction='ink']{box-shadow:inset 0 -2px 0 var(--sp-line)}
+.sp-reactive[data-react-kind='link'].sp-active[data-reaction='glint']{box-shadow:0 4px 18px #b6ce7a22,inset 0 0 0 1px #b6ce7a28}
+.sp-reactive[data-react-kind='link'].sp-active[data-reaction='lift']{translate:0 -2px}
+.sp-reactive[data-react-kind='link'].sp-active[data-reaction='sketch']{text-shadow:1px 1px 0 #d1ff4640}
+.sp-reactive[data-react-kind='link'].sp-active[data-reaction='echo']{box-shadow:2px 3px 0 #ff5a361f}
+.sp-static.sp-active{translate:none!important;rotate:none!important;text-shadow:none!important;transition:none!important}
+.sp-static.sp-active[data-react-kind='surface']{box-shadow:inset 0 -2px 0 var(--sp-line)!important}
+.sp-static.sp-active[data-react-kind='text']{color:var(--sp-tone)}
+
+@media(max-width:800px){.prices .price-grid{padding:12px;gap:12px;border-radius:22px}.prices .price-card{padding:24px}.section-head>p,.services .section-head>p{text-align:left}}
+@media(max-width:600px){.prices .price-grid{padding:10px;gap:17px}.prices .price-card{border-radius:13px 25px 13px 13px;padding:25px}.prices .price-card::before{opacity:.65}}
+@media(prefers-reduced-motion:reduce){
+  .sp-reactive,.sp-reactive *{animation:none!important}
+  .sp-reactive.sp-active,.sp-reactive.sp-active .project-shot,.sp-reactive.sp-active .project-preview,.sp-reactive.sp-active .sector-preview{translate:none!important;rotate:none!important;transition:none!important}
+  .guide-card .sp-brush-text{transition:none!important}
+}
+
+.prices .featured li::before{color:#d1ff46}

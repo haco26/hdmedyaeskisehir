@@ -1,0 +1,30 @@
+/* The sculpture belongs to the page, with a generous virtual camera frame. */
+.hero{overflow:visible!important;isolation:auto!important;z-index:auto!important}
+.hero-stage{z-index:20;align-self:center!important;cursor:grab;user-select:none;-webkit-user-select:none;touch-action:pan-y pinch-zoom}
+.hero-stage:active{cursor:grabbing}
+@media(min-width:801px){.hero-stage{transform:translateY(-31px)}.hero-content{align-self:center;padding-top:0!important}}
+body>#logo3d.hd-scene-surface{position:fixed!important;inset:0!important;width:100vw!important;height:100vh!important;max-width:none!important;max-height:none!important;background:transparent!important;border:0!important;box-shadow:none!important;pointer-events:none!important;opacity:0!important;z-index:9;transition:opacity .35s;outline:0!important}
+body>#logo3d.hd-scene-surface.is-ready.is-visible{opacity:1!important}
+body>#logo3d.hd-scene-surface.is-enlarged{z-index:10000}
+body>#logo3d.hd-scene-surface:focus-visible{outline:0!important}
+.hero-stage:focus-within,.hero-stage.is-focused{outline:0!important}.hero-stage.is-focused .hero-orbit-links .orbit-folder{border-color:#a5af90}.hero-stage.is-focused .hero-orbit-links .orbit-folder:before{border-top-color:#ff5a36}
+/* Folder tabs sit in the sculpture's negative space, rather than over its face. */
+.hero-orbit-links{position:absolute;inset:0;z-index:15;pointer-events:none}
+.hero-orbit-links .orbit-folder{--folder-x:0px;--folder-y:0px;position:absolute;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:5px;width:150px;min-height:57px;padding:11px 15px 12px;background:#fffffff0;border:1px solid #d9ddcf;border-radius:3px 11px 11px 11px;color:#272d21;text-decoration:none;box-shadow:0 7px 18px #29311d06;opacity:0;transform:translateY(8px);transition:opacity .24s ease,transform .3s cubic-bezier(.2,.8,.2,1),border-color .2s,box-shadow .2s;pointer-events:none;white-space:nowrap;isolation:isolate;cursor:pointer;backdrop-filter:blur(14px)}
+.hero-orbit-links .orbit-folder:before{content:'';position:absolute;top:-7px;left:-1px;width:59px;height:8px;border:1px solid #d9ddcf;border-bottom:0;background:#fffffff0;border-radius:7px 7px 0 0;z-index:-1;transition:border-color .2s}
+.hero-orbit-links .orbit-folder:nth-child(1){left:3%;top:9%;--folder-delay:20ms}
+.hero-orbit-links .orbit-folder:nth-child(2){right:1%;top:9%;width:136px;--folder-delay:65ms}
+.hero-orbit-links .orbit-folder:nth-child(3){left:40%;bottom:0;width:159px;--folder-delay:110ms}
+.hero-orbit-links .orbit-meta{display:block;color:#737b68;font:500 10px/1.1 'DM Sans',sans-serif;letter-spacing:.09em;text-transform:uppercase}
+.hero-orbit-links strong{display:block;font:600 13px/1.2 'DM Sans',sans-serif;letter-spacing:-.015em}
+.hero-orbit-links .orbit-file{position:absolute;right:13px;bottom:15px;width:18px;height:2px;background:#a5af90;box-shadow:0 -5px 0 #d9decf;transform-origin:left center;transition:width .24s,background .2s}
+.hero-stage:hover .hero-orbit-links .orbit-folder,.hero-stage.is-focused .hero-orbit-links .orbit-folder,.hero-stage:focus-within .hero-orbit-links .orbit-folder,.hero-orbit-links:focus-within .orbit-folder{opacity:1;transform:translate(var(--folder-x),var(--folder-y));pointer-events:auto;transition-delay:var(--folder-delay)}
+.hero-orbit-links .orbit-folder:hover,.hero-orbit-links .orbit-folder:focus-visible{border-color:#7b8c61;background:#fff;box-shadow:0 12px 24px #29311d12;outline:0;transform:translate(var(--folder-x),calc(var(--folder-y) - 3px))!important;transition-delay:0ms!important}
+.hero-orbit-links .orbit-folder:hover:before,.hero-orbit-links .orbit-folder:focus-visible:before{border-color:#7b8c61}
+.hero-orbit-links .orbit-folder:hover .orbit-file,.hero-orbit-links .orbit-folder:focus-visible .orbit-file{width:24px;background:#ff5a36}
+.hero-stage.is-enlarged .hero-orbit-links{opacity:0;pointer-events:none}
+.hero-stage.is-enlarged .hero-orbit-links .orbit-folder{pointer-events:none}
+@media(max-width:1150px) and (min-width:801px){.hero-orbit-links .orbit-folder:nth-child(1){left:2%;top:9%}.hero-orbit-links .orbit-folder:nth-child(2){right:0;top:9%}.hero-orbit-links .orbit-folder:nth-child(3){left:39%;bottom:0}}
+@media(max-width:800px){.hero-stage{transform:none!important;margin-top:15px!important}.hero-orbit-links .orbit-folder{width:132px;min-height:53px;padding:10px 12px;gap:4px}.hero-orbit-links .orbit-folder:nth-child(1){left:0;top:0}.hero-orbit-links .orbit-folder:nth-child(2){right:0;top:0;width:125px}.hero-orbit-links .orbit-folder:nth-child(3){left:50%;bottom:0;width:145px;margin-left:-72px}.hero-orbit-links .orbit-meta{font-size:9px;letter-spacing:.06em}.hero-orbit-links strong{font-size:12px}.hero-orbit-links .orbit-file{right:11px;bottom:13px;width:15px}}
+@media(hover:none){.hero-orbit-links .orbit-folder{opacity:1;transform:none;pointer-events:auto;background:#fffffff5}.hero-orbit-links .orbit-folder:hover{transform:none!important}}
+@media(prefers-reduced-motion:reduce){body>#logo3d.hd-scene-surface,.hero-orbit-links .orbit-folder,.hero-orbit-links .orbit-folder:before,.hero-orbit-links .orbit-file{transition:none!important}.hero-orbit-links .orbit-folder:hover,.hero-orbit-links .orbit-folder:focus-visible{transform:none!important}}

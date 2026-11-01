@@ -1,0 +1,24 @@
+/* Company marketing composition only; long article text and forms remain left aligned. */
+:is(main#ust,.content-page main) .section-head{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;gap:18px!important;text-align:center!important;max-width:100%;margin-inline:auto}
+:is(main#ust,.content-page main) .section-head>div{width:100%;max-width:1000px}
+:is(main#ust,.content-page main) .section-head :is(.eyebrow,h2){text-align:center!important;margin-inline:auto}
+:is(main#ust,.content-page main) .section-head>p{position:relative!important;align-self:center!important;text-align:center!important;max-width:760px!important;width:100%;padding:0 0 22px!important;margin:0 auto!important;border:0!important;box-sizing:border-box;line-height:1.8}
+:is(main#ust,.content-page main) .section-head>p:before{display:none!important}
+:is(main#ust,.content-page main) .section-head>p:after{content:''!important;display:block!important;position:static!important;width:88px!important;height:5px!important;background:#caff43!important;border:0!important;clip-path:polygon(0 25%,100% 0,96% 70%,3% 100%);transform:rotate(-2deg)!important;margin:18px auto 0!important}
+.content-page .reader-intro{text-align:center;max-width:1040px;margin-inline:auto}.content-page .reader-intro :is(h1,.reader-deck,.reader-category){margin-left:auto;margin-right:auto}.content-page .reader-intro .breadcrumbs,.content-page .reader-intro .byline{justify-content:center}.content-page .reader-intro .reader-deck{max-width:800px}
+.content-page .reader-body{text-align:left}.content-page .reader-toc{text-align:left}
+@media(max-width:650px){:is(main#ust,.content-page main) .section-head{gap:14px!important}:is(main#ust,.content-page main) .section-head>p{max-width:100%!important}}
+.content-page .reader-hub>h2,.content-page .reader-hub>p{text-align:center;max-width:840px;margin-left:auto;margin-right:auto}.content-page .reader-intro>p{margin-left:auto;margin-right:auto}.latest-articles-more{text-align:center;margin-top:26px}.article-intro--text:after{margin-left:auto;margin-right:auto}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}}
+/* Long editorial titles need breathing room, not hero-sized compression. */
+.content-page .reader-intro h1{font-size:clamp(32px,4.15vw,52px)!important;line-height:1.18!important;letter-spacing:-.035em!important;max-width:1000px!important;margin:22px auto 0!important;text-wrap:balance;overflow-wrap:anywhere;word-break:normal}.content-page .reader-intro .reader-deck{font-size:18px;line-height:1.8}
+/* Supporting information remains readable without inflating ornamental brand text. */
+:where(main#ust,.content-page main) :is(.text-link,.read-guide,.guide-index,.reader-category,.breadcrumbs,.byline,.reader-toc a,.reader-links a,.sector-footnote,.price-note,.auto-privacy,.form-privacy,.contact-note,.local-niche-series a span){font-size:14px!important;line-height:1.65!important;color:#44533b!important}
+:is(main#ust,.content-page main) :is(.company-link small,.company-identity small,.company-locations,.business-address,.reference-flow-heading p){font-size:14px!important;line-height:1.65;color:#44533b}
+:is(body:has(main#ust),body.content-page) footer :is(p,a:not(.brand),small:not(.brand small)),:is(body:has(main#ust),body.content-page) .legal-links{font-size:14px;line-height:1.65;color:#44533b}
+:is(main#ust,.content-page main) .section-head>p{padding-bottom:4px!important}
+:is(main#ust,.content-page main) .section-head>p:after{display:none!important}
+.section-copy-ink{padding-bottom:5px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='340' height='16' viewBox='0 0 340 16'%3E%3Cpath d='M6 10 Q104 1 194 7 T332 4 M49 14 Q186 8 291 11' fill='none' stroke='%2395bb38' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-size:min(100%,340px) 12px;background-position:center bottom;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+@media(max-width:650px){.content-page .reader-intro h1{font-size:clamp(32px,7.5vw,40px)!important;line-height:1.2!important}.content-page .reader-intro .reader-deck{font-size:17px}}
+.article-markdown,.article-list .guide-card{overflow-wrap:anywhere;min-width:0}.form-legal{font-size:14px;line-height:1.6;color:#44533b;margin:12px 0 0}.form-legal a{color:inherit}
+

@@ -1,0 +1,40 @@
+/* Editorial section openings: one reading flow, with a painted lead-in. */
+main .section-head,main .services .section-head{display:block!important;grid-template-columns:none!important;gap:0!important;align-items:initial!important;max-width:none;margin-bottom:44px}
+main .section-head>div{max-width:950px}
+main .section-head h2{max-width:950px;text-wrap:balance}
+main .section-head>p,main .services .section-head>p{position:relative;justify-self:auto!important;align-self:auto!important;text-align:left!important;margin:23px 0 0!important;padding:0 0 0 23px!important;max-width:710px!important;font-size:18px!important;line-height:1.75!important;text-wrap:pretty;color:#555e4c}
+main .section-head>p::before{content:'';position:absolute;left:0;top:5px;width:5px;height:calc(100% - 10px);max-height:55px;background:#ff6c46;clip-path:polygon(20% 0,100% 4%,75% 29%,100% 46%,65% 100%,0 96%,25% 61%,0 34%);transform:rotate(2deg)}
+
+/* The lamp paints the masonry continuously; copy never gets a dark plate. */
+.wall-scene .wall-footer{background:none!important;box-shadow:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;isolation:auto!important}
+.wall-scene .wall-footer::before,.wall-scene .wall-footer::after{content:none!important;display:none!important;background:none!important}
+.wall-scene .wall-footer p{font-size:20px!important;line-height:1.6!important;font-weight:650!important;max-width:370px!important;color:#fff!important;text-shadow:0 1px 3px #000,0 2px 8px #0008}
+.wall-scene .wall-footer p strong,.wall-scene .wall-footer p>span{font-weight:700!important}
+.wall-scene .wall-footer p>span{color:#d5ff3f!important}
+
+/* Consistent tactile response starts immediately, independent of random gestures. */
+.prices .price-card{transition:transform .22s ease,box-shadow .22s ease,border-color .18s ease!important;transform-origin:50% 65%}
+.prices .price-card:focus-within{border-color:#9eae7c;box-shadow:inset 1px 1px 0 #fff,0 19px 35px #35432622}
+.faq-list details{position:relative;padding:0 16px;border-radius:4px 15px 4px 4px;transition:transform .2s ease,background .2s ease,border-color .2s ease!important}
+.faq-list details::before{content:'';position:absolute;left:0;top:20%;bottom:20%;width:4px;background:#ff7951;clip-path:polygon(20% 0,100% 5%,65% 100%,0 94%,20% 58%,0 20%);transform:scaleY(0);transform-origin:center;transition:transform .2s ease;pointer-events:none}
+.faq-list summary{transition:color .18s ease}
+.faq-list details:focus-within,.faq-list details[open]{background:#f2f6e9;border-color:#c1d395}
+.faq-list details:focus-within::before,.faq-list details[open]::before{transform:scaleY(1)}
+@media(hover:hover) and (pointer:fine){
+  .prices .price-card:hover{transform:perspective(1000px) translateY(-9px) rotateX(2deg) rotateY(-1deg)!important;border-color:#abbc81;box-shadow:inset 1px 1px 0 #fff,0 24px 38px #35432625!important}
+  .prices .price-card.featured:hover{border-color:#d1ff46;box-shadow:inset 1px 1px 0 #e4f4c080,0 25px 40px #24321a35!important}
+  .prices .price-card:hover::before{opacity:1;transition:opacity .18s}
+  .faq-list details:hover{transform:translateX(4px);background:linear-gradient(90deg,#fff0e6,#f5f8ed 65%,transparent);border-color:#c4d49f}
+  .faq-list details:hover::before{transform:scaleY(1)}
+  .faq-list details:hover summary{color:#424f31}
+}
+@media(max-width:700px){
+  main .section-head,main .services .section-head{margin-bottom:30px}
+  main .section-head>p,main .services .section-head>p{font-size:16px!important;line-height:1.75!important;margin-top:19px!important;padding-left:19px!important;max-width:100%!important}
+  .wall-scene .wall-footer p{font-size:17px!important;line-height:1.6!important;max-width:100%!important}
+  .faq-list details{padding:0 12px}
+}
+@media(prefers-reduced-motion:reduce){
+  .prices .price-card,.prices .price-card:hover,.prices .price-card:focus-within,.faq-list details,.faq-list details:hover,.faq-list details::before{transition:none!important;transform:none!important;translate:none!important;rotate:none!important}
+  .faq-list details::before{opacity:0}.faq-list details:hover::before,.faq-list details:focus-within::before,.faq-list details[open]::before{opacity:1}
+}

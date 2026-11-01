@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hd-medya-studio.astrallynx1026.chatgpt.site/sitemap.xml
